@@ -80,3 +80,49 @@ console.log(user.lastName === undefined); // true (свойства lastName н�
 
 console.log('address' in user);  // true (свойство address есть)
 console.log('lastName' in user); // false (свойства lastName нет)
+
+//---------------------------------------------------------------------------------------------------
+
+// Тема: Операции с объектами
+// Ваши имя и фамилия: 
+//1. Создайте объект с именем user, который описывает пользователя  
+//   cо свойствами username и status (online или offline).
+let user = {
+  username: 'Vladimir',
+  status: 'online',
+}
+//2. Выведите объект в консоль.
+console.log(user);
+//3. Добавьте свойство lastActivity, значение которого - 
+//   количество минут проведенных в сети. 
+user = {
+  username: 'Vladimir',
+  status: 'online',
+  lastActivity: 36,
+}
+//4. Выведите объект в консоль.
+console.log(user);
+//5. Добавьте свойство password.
+user = {
+  username: 'Vladimir',
+  status: 'online',
+  lastActivity: 36,
+  password: 'qwerty',
+}
+//6. Удалите свойство lastActivity.
+delete user.lastActivity;
+//7. Добавьте свойство address, являющееся объектом и содержащее 
+//   название города, штата и индекса.
+user = {
+  username: 'Vladimir',
+  status: 'online',
+  lastActivity: 36,
+  password: 'qwerty',
+  address: {
+    city: 'Florida',
+    state: 'Kz',
+    index: 23413,
+  }
+}
+//8. Выведите в консоль город проживания пользователя.
+console.log(user.address.city);
