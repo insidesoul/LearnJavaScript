@@ -126,3 +126,47 @@ user = {
 }
 //8. Выведите в консоль город проживания пользователя.
 console.log(user.address.city);
+
+//-----------------------------------------------------------------------------------------------
+
+//1. Создайте объект, описываающий книгу со следующими свойствами:
+//   authorFirstName, authorLastName, title, style, year,  numberOfPages,
+//   задайте значения свойств объекта.
+let book = {
+  autorFirstName: 'Lend',
+  autorLastName: 'Helder',
+  title: 'King',
+  style: 'Fantasy',
+  year: 2022,
+  numberOfPages: 654,
+}
+//2. Проверьте существование этих шести свойств у объекта разными способами.
+if (book.autorFirstName)
+  console.log('Yes');
+console.log(!!(book.autorLastName));
+console.log(Boolean(book.title));
+console.log(!!book['style']);
+const a = 'year';
+console.log(!book[a]);
+console.log(book.numberOfPages !== undefined);
+console.log(book.hasOwnProperty('year'));
+console.log('numberOfPages' in book);
+//3. Проверьте существование у объекта свойства hardcover
+console.log('hardcover' in book);
+
+//-----------------------------------------------------------------------------------------------
+
+//Создайте объект, описывающий вас как студента группы QA5.
+const student = {
+  name: 'Vladimir',
+  age: 20,
+}
+//Добавьте любое свойство
+student['city'] = 'Apatity';
+//Измените значение какого-нибудь свойства
+student.age = 21;
+//Удалите любое свойство
+delete student.name;
+//Определите, есть ли у объекта свойство hasBackgroundAsProgrammer
+console.log('hasBackgroundAsProgrammer' in student);
+console.log(student);
