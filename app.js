@@ -281,3 +281,168 @@ console.log(!!5, !!'pasv', Boolean(0), Boolean(''), !!null, Boolean(undefined));
 
 //-----------------------------------------------------------------------------------------------
 
+//Тема: Верное условие if и неверное else
+//1. Задайте 2 переменные x и y, присвойте им значения 12 и 7
+//  (значения могут меняться, ваш код должен работать правильно всегда!)
+//  Найти и вывести в консоль большее из этих двух чисел.
+const x = 12;
+const y = 7;
+if (x > y) {
+  console.log(x);
+} else {
+  console.log(y);
+}
+//2. Задайте переменную a, присвойте ей произвольное значение.
+//  Определите, является ли это значение четным.
+const a = 5;
+if (a >= 0) {
+  console.log("Even");
+} else {
+  console.log('Odd');
+}
+//3. Задайте переменную age (возраст человека), присвойте ей произвольное значение.
+//   Определите, является ли этот человек школьником
+//  (школьником будем считать человека в возрасте от 5 до 18 лет включительно).
+const age = 23;
+if (age <= 18 && age >= 5) {
+  console.log('Schoolboy');
+  } else {
+  console.log('Not schoolboy');
+}
+//4. Задайте переменную year, присвойте ей произвольное значение. 
+//   Определите, относится ли год к XXI веку 
+//   (XXI век начинается с 2001 года и заканчивается в 2100 году).
+ const year = 2000;
+if ( year >= 2001 && year < 2100) {
+  console.log('XXI century');
+}  else {
+  console.log('Another century');
+}
+//5. Задайте переменную  month, присвойте ей значение от 1 до 12.
+//   Выведите в консоль название поры года (Winter, Spring, Summer, Fall). 
+const month = 2;
+if (month === 12 || month < 3) {
+  console.log('Winter');
+} else if (month > 2 && month < 6) {
+  console.log('Spring');
+} else if (month > 5 && month < 9) {
+  console.log('Summer');
+} else {
+  console.log('Fall');
+}
+
+//-----------------------------------------------------------------------------------------------
+
+//Тема: Тернарный оператор
+//1. Задайте переменную x, присвойте ей произвольное значение.
+//   Получите в переменной isPositive значение true, если x>0
+//   и false, если x<=0 (используйте тернарный оператор)
+let x = 31;
+let isPositive = x > 0 ? 'true' : 'false';
+console.log(isPositive);
+//2. Задайте переменную y, присвойте ей произвольное значение.
+//   Получите в переменной isEven значение true, если y четное,
+//   и false, если y нечетное (используйте тернарный оператор)
+let y = 23;
+let isEven = y > 0 ? 'true' : 'false';
+console.log(isEven);
+//3. Задайте переменную z, присвойте ей произвольное значение.
+//   Получите в переменной isString значение true, если это строка,
+//   и false в противном случае.
+let z = '21';
+let isString = typeof z === 'string' ? 'true' : 'false';
+console.log(isString);
+//5. Задайте переменную number, присвойте ей произвольное числовое значение.
+//   Если число четное, увеличьте его на 1, если нечетное - уменьшите его на 1. 
+//   Получите в переменной newNumber значение новое значение этого числа.
+let number = 23;
+number % 2 ? (number === 0 ? number++ : number--) : 'error';
+console.log(number);
+
+//-----------------------------------------------------------------------------------------------
+
+//Тема: Не будем забывать о switch!
+//1. Напишите if..else, соответствующий следующему switch:
+let score = 5;
+switch (score) {
+  case 1: 
+  case 2:
+    console.log('very bad');
+    break;
+  case 3: 
+    console.log('bad');
+    break;
+  case 4:
+    console.log('good');
+    break;
+  default:
+    console.log('excellent');
+}
+//-------------
+if (score < 3 && score > 0) {
+  console.log('very bad');
+} else if (score === 3) {
+  console.log('bad');
+} else if (score === 4) {
+  console.log('good');
+} else {
+  console.log('excellent');
+}
+// 2. Задайте переменную dayOfWeek (номер дня недели - число от 1 до 7). 
+//   Выведите в консоль название этого дня недели.
+let dayOfWeek = 7;
+switch (dayOfWeek) {
+  case 1:
+    console.log('Monday');
+    break;
+  case 2:
+    console.log('Tuesday');
+    break;
+  case 3:
+    console.log('Wednesday');
+    break;
+  case 4:
+    console.log('Thuesday');
+    break;
+  case 5:
+    console.log('Friday');
+    break;
+  case 6:
+    console.log('Saturday');
+    break;
+  case 7:
+    console.log('Sunday');
+    break;
+    default:
+    console.log('what?');
+}
+// 3. Задайте переменную month (номер месяца  - число от 1 до 12). 
+//   Выведите в консоль название времени года
+//  (используйте switch с группировкой)
+let month = 12; 
+switch (month) {
+  case 12:
+  case 1:
+  case 2:
+    console.log('Winter');
+    break;
+  case 3:
+  case 4:
+  case 5:
+    console.log('Spring');
+    break;
+  case 6:
+  case 7:
+  case 8:
+    console.log('Summer');
+    break;
+  case 9:
+  case 10:
+  case 11:
+    console.log('Autumn');
+    break;
+    default:
+    console.log('what?');
+}
+
+//-----------------------------------------------------------------------------------------------
