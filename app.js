@@ -789,6 +789,63 @@ for (let i = 0; i <= 10; i++) {
 
 //-----------------------------------------------------------------------------------------------
 
-
+//Тема: Разновидности циклов
+//1. Выведите в консоль числа от 1,3,5,7,9,11,13,15 
+// с помощью цикла for:
+for (let i = 1; i <= 15; i++) {
+  console.log(i);
+}
+// с помощью цикла while:  
+let i = 1;
+while (i<=15) {
+  console.log(i);
+  i++;
+}
+// с помощью цикла do...while:
+let dd = 1;
+do {
+  console.log(dd);
+   dd++;
+} while (dd <= 15);
+//2.Дана строка word = 'alternation';
+//  Выведите в консоль символы строки word через один (используйте цикл).
+//  (должно получиться 'atrain') 
+let word = 'alternation';
+for (let i = 0; i < word.length; i+=2) {
+  console.log(word[i]);
+}
+//3. Дана строка back = 'Madam I am Adam';
+//  Выведите в консоль каждый символ строки back 
+//  поочередно, с конца (используйте цикл).
+let back = 'Madam I am Adam';
+for (let i = back.length - 1; i >= 0; i--) {
+  console.log(back[i]);
+}
+//4.Дана строка str = 'student';
+//  Задайте пустую строку result =''; 
+//  Пройдите циклом по строке str и путем операции + (слияние)
+//  запишите в строку result символы строки str, разделяя их пробелами.
+//  (должно получиться 's t u d e n t ')
+let result ='';
+let str = 'student';
+for (let i = 0; i < str.length; i++) {
+  result = result + str[i] + ' ';
+}
+console.log(result);
+//5*.Дана строка row = 'pull up if i pull up';
+// Задайте пустую строку rowBack, в которую запишите все символы
+// строки row, начиная с конца, кроме пробелов.
+// Выведите в консоль true, если строка row равна строке rowBack,
+// и false, если строка row не равна строке rowBack
+let row = 'pull up if i pull up';
+let rowBack = '';
+for (let i = row.length - 1; i >= 0; i--) {
+  if (row[i] === ' ') {
+    
+  } else {
+    rowBack = rowBack + row[i];
+  }
+}
+console.log(rowBack === row);
 
 //-----------------------------------------------------------------------------------------------
