@@ -972,3 +972,91 @@ function string (a) {
 console.log(string(5));
 
 //-----------------------------------------------------------------------------------------------
+
+//Тема: Функциональные выражения, стрелочные функции и многое другое
+//1. Дан массив arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//   Напишите функцию sum, которая принимает массив как аргумент и возвращает
+//   сумму элементов массива.
+const arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let sum1 = 0;
+function sum (arr1) {
+   for (let i = 0; i < arr1.length; i++) {
+    sum1 += arr1[i];
+  }
+  return sum1
+}
+console.log(sum(arr1));
+//2. Дан массив arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//   Напишите функцию reverse, которая принимает массив как аргумент и возвращает
+//   массив, в котором элементы расположены в обратном порядке.
+const arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let arr2Rev = [];
+function reverse (arr2) {
+  for (let i = arr2.length - 1; i >= 0; i--) {
+    arr2Rev.push(arr2[i]);
+  }
+  return arr2Rev;
+}
+console.log(reverse(arr2));
+console.log(arr2.reverse());
+//3. Дан массив arr3 = [1, 2, -3, 4, -5, 6, 7, -8, 9, 10];
+//   Напишите функцию indexOfFirstNegative, которая принимает массив и возвращает
+//   индекс первого отрицательного элемента массива (в данном массиве это 2).
+
+// const arr3 = [1, 2, -3, 4, -5, 6, 7, -8, 9, 10];
+// let negativSymbol = 0;
+// function indexOfFirstNegative (arr3) {
+//   for (let i = arr3.length - 1; i >= 0; i--) {
+//     if (arr3[i] < 0) {
+//       negativSymbol = i;
+//     }  
+//   }
+//   return negativSymbol;
+// }
+// console.log(indexOfFirstNegative(arr3));
+
+const arr3 = [1, 2, -3, 4, -5, 6, 7, -8, 9, 10];
+let negativSymbol = 0;
+function indexOfFirstNegative (arr3) {
+  for (let i = 0; i < arr3.length; i++) {
+    if (arr3[i] < 0) {
+      negativSymbol = i;
+      break;
+    }  
+  }
+  return negativSymbol;
+}
+console.log(indexOfFirstNegative(arr3));
+
+//4. Напишите функцию с именем newArray, которая принимает два числа x, y (x<y)
+//   и возвращает массив, в котором записаны целые числа от x до y.
+//   Например, если x = 5, y = 10, вернуть массив [5,6,7,8,9,10];
+const newArr = [];
+function newArray (x, y) {
+  for (let i = x; i <= y; i++) {
+    newArr.push(i);
+  }
+  return newArr;
+}
+console.log(newArray(10, 15));
+//5. Дан массив строк: 
+//   arr4 = ['apple', 'orange', 'grape', 'banana', 'mango', 'peach'];
+//   Напишите функцию countWords, которая принимает массив как аргумент 
+//   и возвращает количество слов, длина которых равна 5.
+const arr4 = ['apple', 'orange', 'grape', 'banana', 'mango', 'peach'];
+let count = 0;
+function countWords (arr4) {
+  for (let i = 0; i < arr4.length; i++) {
+    if (arr4[i].length === 5) {
+      count++
+    }
+  }
+  return count
+}
+console.log(countWords(arr4));
+
+//-----------------------------------------------------------------------------------------------
+
+
+
+//-----------------------------------------------------------------------------------------------
