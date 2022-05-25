@@ -46,3 +46,78 @@ function howMuchILoveYou(nbPetals) {
     }
     return result
 }
+
+function seatsInTheater(nCols, nRows, col, row) {
+  return (nCols - (col - 1)) * (nRows - row);
+}
+
+function angle(n) {
+  let result = 180;
+  for (let i = 3; i < n; i++){
+    result += 180;
+  }
+  return result
+}
+
+function maxMultiple(divisor, bound){
+  for(let i = bound; i > 0; i--) {
+     if ((i % divisor) === 0) {
+       return i;
+     }
+  }
+}
+
+//--------------------------------------------------------------------------
+
+function boolToWord( bool ){
+  if (bool === true) {
+    return 'Yes'
+  } else {
+    return 'No'
+  }
+}
+
+function problem(x){
+  if (typeof(x) === 'string') {
+    return 'Error'
+  } else {
+    return x * 50 + 6
+  }
+}
+
+function cookie(x){
+  if (typeof(x) === 'string') {
+    return "Who ate the last cookie? It was Zach!"
+  } else if (typeof(x) === 'number') {
+    return "Who ate the last cookie? It was Monica!"
+  } else {
+    return "Who ate the last cookie? It was the dog!"
+  }
+}
+
+function isUndefined(value) {
+  if (value === undefined) {
+    return true
+  } else {
+    return false
+  }
+}
+
+function myFirstKata(a, b) {
+  if (typeof(a) !== "number" || typeof(b) !== "number") {
+    return false;
+  } else {
+    return a % b + b % a;
+  }
+}
+
+function typeOfSum(a, b) {
+  if (typeof a !== 'string' && typeof b !== 'string'){
+    return 'number'
+    } else {
+      return 'string'
+    }
+}
+
+//--------------------------------------------------------------------------
+
