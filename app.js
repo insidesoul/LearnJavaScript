@@ -121,3 +121,14 @@ function typeOfSum(a, b) {
 
 //--------------------------------------------------------------------------
 
+function numberToString(num) {
+  return String(num)
+}
+
+const stringToNumber = function(str){
+  return Number(str);
+}
+
+function sumStr(a,b) {
+  return String(Number(a) + Number(b))
+}
