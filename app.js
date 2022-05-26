@@ -132,3 +132,49 @@ const stringToNumber = function(str){
 function sumStr(a,b) {
   return String(Number(a) + Number(b))
 }
+
+//--------------------------------------------------------------------------
+
+function discoverOriginalPrice(discountedPrice, salePercentage){
+  return (Math.round(((discountedPrice / (100 - salePercentage)) * 100) * 100)) / 100
+}
+
+function twoDecimalPlaces(number) {
+  number = String(number)
+  let ab = "";
+  for(let i = 0; i < number.length; i++){
+     ab += number[i]
+    if (number[i] === ".") {
+      i++
+       ab += number[i]
+      i++
+       ab += number[i]
+      return (+ab)
+    }
+    }
+}
+
+function squareRoot(x) {
+  x = x ** 0.5
+  x = String(x)
+  let ab = "";
+  for(let i = 0; i < x.length; i++){
+     ab += x[i]
+    if (x[i] === ".") {
+      i++
+       ab += x[i]
+      i++
+       ab += x[i]
+       i++
+       ab += x[i]
+       i++
+       ab += x[i]
+       i++
+       ab += x[i]
+      i++
+       ab += x[i]
+      return Math.round((+ab) * 100000)/100000
+    } else if (i === x.length - 1){
+       return (+ab) }
+}
+}
