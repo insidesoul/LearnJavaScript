@@ -235,3 +235,54 @@ console.log(x.toFixed(1)); // "5.5"
 
 //--------------------------------------------------------------------------------------------------------------------------------
 
+function litres(time) {
+  return Math.floor(time * 0.5);
+}
+
+const closestMultiple10 = num => {
+ return (Math.round(num / 10)) * 10
+}
+
+function oddCount(n){
+ return Math.floor(n / 2)
+}
+
+function century(year) {
+  return Math.ceil(year / 100)
+}
+
+function womensAge(n) {
+  if (n % 2 === 0) {
+    let b = n / 2
+    return `${n}? That's just 20, in base ${b}!`
+  } else {
+    let c = (n - 1) / 2
+    return `${n}? That's just 21, in base ${c}!`
+  }
+}
+
+function hoopCount (n) {
+   if (n >= 10) {
+     return 'Great, now move on to tricks'
+   } else {
+     return "Keep at it until you get it"
+   }
+}
+
+function ifChuckSaysSo(){
+  return 0 > 2 
+}
+
+function trueOrFalse(val){
+ return !!val === true ? 'true' : 'false';
+}
+
+function add(a, b){
+ return a == b
+}
+
+function hero(bullets, dragons){
+ return bullets >= (dragons * 2)
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------
