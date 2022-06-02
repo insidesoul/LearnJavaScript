@@ -286,3 +286,149 @@ function hero(bullets, dragons){
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------
+
+function even_or_odd(number) {
+  return number % 2 ? 'Odd' : 'Even'
+}
+
+function isLucky(n) {
+  n = String(n);
+  let a = 0;
+  for (let i = 0; i < n.length; i++) {
+    a = a + n[i]
+  }
+  return a === 0 || a % 9 === 0 ? true : false
+}
+
+function weatherInfo (a) {
+  let celsius = (a - 32) * (5/9)
+  let c = celsius
+  if (c < 0)
+    c = "is freezing temperature"
+  else
+    c = "is above freezing temperature"
+   return `${celsius} ${c}`
+}
+
+function getGrade (s1, s2, s3) {
+  let sm = (s1 + s2 + s3) / 3
+  if (sm >= 90 && sm <= 100) {
+    return 'A'
+  } else if (sm >= 80 && sm <= 90) {
+    return 'B'
+  } else if (sm >= 70 && sm <= 80) {
+    return 'C'
+  } else if (sm >= 60 && sm <= 70) {
+    return 'D'
+  } else {
+    return 'F'
+  }
+}
+
+function calculate(a, o, b) {
+ let result = null;
+ if(o === "+") { 
+   return a + b;
+ }
+   else if(o === "-") {
+     return a - b;
+   }
+else if(o === "/" && b!==0) { 
+   return a / b;
+  }
+ if(o === "*") {
+   return a * b;
+ } else {
+ return result; 
+ }
+}
+
+function chromosomeCheck(sperm) {
+  return sperm === 'XX' ? "Congratulations! You're going to have a daughter." : "Congratulations! You're going to have a son."
+}
+
+function checkAlive (health) {
+  if (health <= 0) {
+    return false
+  } else {
+    return true
+  }
+}
+
+function rainAmount(mm){
+    if (mm < 40) {
+         return `You need to give your plant ${40 - mm}mm of water`
+    }
+    else {
+         return "Your plant has had more than enough water for today!"
+    }
+}
+
+function getRealFloor(n) {
+  if (n < 13 && n > 0) {
+    return n - 1
+  } else if (n >= 13) {
+    return n - 2
+  } else {
+    return n
+  }
+}
+
+function  calculateAge(a1, a2) {
+  let b = a1 - a2;
+  return b === 1 ? 'You will be born in 1 year.' : b === -1 ? 'You are 1 year old.' : a1 > a2 ? `You will be born in ${a1 - a2} years.` : a1 < a2 ? `You are ${a2 - a1} years old.` : 'You were born this very year!';
+}
+
+function bmi(weight, height) {
+  let b = weight / Math.pow(height, 2)
+  return b <= 18.5 ? 'Underweight' : b <= 25.0 ? 'Normal' : b <= 30.0 ? 'Overweight' : 'Obese'
+}
+
+function fuelPrice(litres, pricePerLitre) {
+  let a = litres
+  let b = 0;
+  console.log(pricePerLitre, litres)
+  a < 2 ? b = a * pricePerLitre : a < 4 ? b = a * (pricePerLitre - 0.05) : a < 6 ? b = a * (pricePerLitre - 0.10) : a < 8 ? b = a * (pricePerLitre - 0.15) : a < 10 ? b = a * (pricePerLitre - 0.20) : b = a * (pricePerLitre - 0.25)
+  return Math.round(b * 100) / 100
+}
+
+function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin){
+  if (dolphin === true) {
+    sharkSpeed /= 2
+  }
+  sharkDistance /= sharkSpeed
+  pontoonDistance /= youSpeed
+  console.log(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin)
+  return sharkDistance > pontoonDistance ? "Alive!" : "Shark Bait!"
+}
+
+function simpleMultiplication(number) {
+    return number % 2 === 0 ? number * 8 : number * 9
+}
+
+function enough(cap, on, wait) {
+  return (on + wait) > cap ? (on + wait) - cap : 0 
+}
+
+function humanYearsCatYearsDogYears (humanYears) {
+  let a = 0
+  let b = 0
+  if (humanYears > 2) {
+    a = 15 + 9 + ((humanYears - 2) * 4)
+    b = 15 + 9 + ((humanYears - 2) * 5)
+  } else if (humanYears > 1) {
+    a = 15 + 9
+    b = 15 + 9
+  } else {
+    a = 15
+    b = 15
+  }
+  return [humanYears,a,b];
+}
+
+const areaOrPerimeter = function(l , w) {
+  return l === w ? l * w : 2 * ( l + w )
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------
+
