@@ -432,3 +432,54 @@ const areaOrPerimeter = function(l , w) {
 
 //--------------------------------------------------------------------------------------------------------------------------------
 
+function isOdd(n) {
+  console.log(n)
+ if (Math.round(n) !== n){
+   return false
+ }
+ return Math.abs(n) % 2 === 0 ? false : true
+}
+
+function isDivisible(n, x, y) {
+  return n % x === 0 && n % y === 0 ? true : false
+}
+
+function isTriangle(a,b,c) {
+    console.log(a,b,c)
+  return (b + c) > a && (c + a) > b && (a + b) > c
+}
+
+const rps = (p1, p2) => {
+  return p1 === 'rock' && p2 === 'paper' ? 'Player 2 won!' : p1 === 'paper' && p2 === 'scissors' ? 'Player 2 won!' : p1 === 'scissors' && p2 === 'rock' ? 'Player 2 won!' : p1 === p2 ? 'Draw!' : 'Player 1 won!'
+}
+
+function setAlarm(employed, vacation){
+ return vacation === false && employed === true
+}
+
+function isDivideBy(number, a, b) {
+  return (+number % +a) === 0 && (+number % +b) === 0 ? true : false
+}
+
+function finalGrade (exam, projects) {
+  return exam > 90 || projects > 10 ? 100 : exam > 75 && projects >= 5 ? 90 : exam > 50 && projects >= 2 ? 75 : 0
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------
+
+function areYouPlayingBanjo(name) {
+  return name[0] === 'r' || name[0] === 'R' ? `${name} plays banjo` : `${name} does not play banjo`
+}
+
+function getAges(sum,difference){
+  console.log(sum, difference)
+  let a = (sum - difference) / 2
+  let b = a + difference
+  return sum < 0 || difference < 0 || difference > sum ? null : [b, a]
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------
+
+function plural(n) {
+  return n !== 1 ? true : false
+}
