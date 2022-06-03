@@ -483,3 +483,120 @@ function getAges(sum,difference){
 function plural(n) {
   return n !== 1 ? true : false
 }
+
+function triangular( n ) {
+  if (n < 0){
+    return 0
+  } else {
+    return (n*(n+1)/2)
+  }
+}
+
+function describeAge(a){let b="You're a(n)"
+return a<13?`${b} kid`:a>12&&a<18?`${b} teenager`:a>17&&a<65?`${b} adult`:`${b} elderly`}
+
+function howManyDalmatians(number){
+  console.log(number)
+  let dogs = ["Hardly any", "More than a handful!", "Woah that's a lot of dogs!", "101 DALMATIANS!!!"]; 
+ return number <= 10 ? dogs[0] : number <= 50 ? dogs[1] : number === 101 ? dogs[3] : dogs[2]
+  }
+
+function bonusTime(salary, bonus) {
+ return bonus === true ? `£${salary * 10}` : `£${salary}`
+}
+
+function saleHotdogs(n){
+  if (n < 5) return n * 100
+  else if (n > 4 && n < 10) return n * 95
+  else return n* 90
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------
+
+function getPlanetName(id){
+  var name;
+  switch(id){
+    case 1:
+      name = 'Mercury'
+      break
+    case 2:
+      name = 'Venus'
+      break
+    case 3:
+      name = 'Earth'
+      break
+    case 4:
+      name = 'Mars'
+      break
+    case 5:
+      name = 'Jupiter'
+      break
+    case 6:
+      name = 'Saturn'
+      break
+    case 7:
+      name = 'Uranus'
+      break
+    case 8:
+      name = 'Neptune'
+      break
+  }
+  return name;
+}
+
+function calculate(num1, operation, num2) {
+  if (operation === '/' && num2 === 0) return null
+  switch (operation) {
+      case '+': return num1 + num2
+      break
+      case '/': return num1 / num2
+      break
+      case '-': return  num1 - num2 
+      break
+      case '*': return num1 * num2
+      break
+      default: return null
+  }
+}
+
+function switchItUp(number){
+ switch(number) {
+     case 0: return 'Zero'
+     break
+     case 1: return 'One'
+     break
+     case 2: return 'Two'
+     break
+     case 3: return 'Three'
+     break
+     case 4: return 'Four'
+     break
+     case 5: return 'Five'
+     break
+     case 6: return 'Six'
+     break
+     case 7: return 'Seven'
+     break
+     case 8: return 'Eight'
+     break
+     case 9: return 'Nine'
+     break
+ }
+}
+
+function calculator(a,b,sign){
+  switch (sign) {
+      case '+': return a + b
+      break
+      case '/': return a / b
+      break
+      case '-': return  a - b 
+      break
+      case '*': return a * b
+      break
+      default: return 'unknown value'
+}
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------
+
