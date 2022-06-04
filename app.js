@@ -600,3 +600,82 @@ function calculator(a,b,sign){
 
 //--------------------------------------------------------------------------------------------------------------------------------
 
+function isPowerOfTwo(n){
+  let i = 2
+  while (i < n) {
+    i *= 2
+  }
+  return i === n || n === 1? true : false
+}
+
+function differenceOfSquares(n){
+  let i = 1;
+  let b = 0;
+  let c = 0;
+  while (i <= n) {
+    b = b + i ** 2
+    c += i
+    i++
+  }
+  return c = c ** 2 - b
+}
+
+function movie(card, ticket, perc) {
+  console.log(card, ticket, perc)
+
+  let i = 0
+  let a = 0
+  let b = card
+  do {
+    a += ticket
+    b += ticket * perc ** i
+    i++
+  } while (Math.ceil(b) >= a)
+  return i - 1
+}
+
+function calculateYears(principal, interest, tax, desired) {
+  let i = 0;
+  let div = principal * interest
+  let tx = div * tax
+  while (principal < desired) {
+      i++
+      principal = principal + (div - tx)
+    div = principal * interest
+    tx = div * tax
+    }
+  return i
+}
+
+const remainder = (D, d) =>  {
+  console.log(D,d)
+  while (D >= d) {
+  D =  D - d
+  }
+  return D
+}
+
+function noBoringZeros(n) {
+  while (n % 10 === 0 && n !== 0) {
+    n = n / 10
+  }
+  return n
+}
+
+function factorial(n){
+ let result = 1;
+  for (let i = 2; i <= n; i++) {
+    result *= i;
+  }
+  return result;
+}
+
+function largestPower(n){
+  console.log(n)
+  if(n === 1) return -1
+let i = 0
+  while (Math.pow(3,i) < n) {
+    i++
+  }
+  return n === 3 ? 0 : i - 1
+}
