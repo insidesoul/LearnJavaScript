@@ -679,3 +679,117 @@ let i = 0
   }
   return n === 3 ? 0 : i - 1
 }
+
+function squaresNeeded(grains){
+  console.log(grains)
+  let i = 1
+  let b = 1
+  while (i < grains) {
+    i *= 2
+    b++
+  }
+  return grains < 1 ? 0 : grains === 4 || grains === 2 || grains === 1 ? b : b - 1
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------
+
+function getDivisorsCnt(n){
+  let del = 0;
+    for (let i = 1; i < n + 1 ; i++) {
+      if (n % i === 0) {
+        del++
+      }
+    }
+  return del
+}
+
+function divisors(integer) {
+  let arr = []
+  for (let i = 2 ; i < integer ; i++) {
+    if (integer % i === 0) {
+      arr.push(i)
+    }
+  }
+  return arr.length > 0 ? arr : `${integer} is prime`
+};
+
+function SeriesSum(n){
+  if (n < 1) return '0.00'
+  let del = 4;
+  let sum = 1;
+  for (let i = 1; i < n; i++) {
+    sum = sum + 1/del
+    del += 3
+  }
+  return sum.toFixed(2)
+}
+
+function isPronic(n){
+  for (let i = 0; (i*2) < (n+1); i++){
+    if (i * (i+1) === n) return true 
+    }
+  return false
+}
+
+var summation = function (num) {
+  let sum = 0;
+  for(let i = 1; i <= num; i++) {
+    sum += i
+  }
+  return sum
+}
+
+function getSum( a,b ){
+  console.log(a,b)
+  let sum = 0;
+  if (a < b) {
+  for (let i = a; i <= b; i++){
+    sum = sum + i;
+    }
+  } else {
+      for (let i = a; i >= b; i--){
+      sum = sum + i;
+      }
+    }
+  return sum
+}
+
+function pickIt(arr){
+  var odd=[],even=[];
+  for(let i = 0; i < arr.length; i++) {
+   if (arr[i] % 2 === 0) even.push(arr[i])
+    else odd.push(arr[i])
+  }
+  return [odd,even];
+}
+
+function sumMul(n,m){
+  console.log(n,m)
+  if (n >= m) return "INVALID"
+ let sum = 0;
+  for(let i = 0; i < m; i++) {
+    if(i % n === 0) {
+      sum += i;
+    }
+  }
+  return sum
+}
+
+function sumTriangularNumbers(n) { 
+  let sum = 0;
+  for (let i = 1; i <= n; i++) { 
+    sum += (i * (i + 1)) / 2; 
+  } 
+  return sum;
+}
+
+function drawStairs(n) {
+  let cnt = 0;
+    let result = '';
+    while(n > cnt){
+      result += ' '.repeat(cnt) + 'I';
+      cnt++;
+      if(n > cnt) result += '\n';
+    }
+    return result;
+}
