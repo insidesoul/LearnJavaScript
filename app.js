@@ -793,3 +793,58 @@ function drawStairs(n) {
     }
     return result;
 }
+
+//-----------------------------------------------------------------
+
+function roundToNext5(n){
+ let i = 1
+  do {
+   if(n%5 === 0) return n
+  n += i
+  }
+  while(n % 5 !== 0)
+    return n
+}
+
+function padIt(str,n){
+  let strF = ''
+  if(n%2 === 1) {
+      strF += '*'
+      n--
+  }
+  n /= 2
+  let i = 1;
+  while (i <= n) {
+    strF += '*'
+    i++
+  }
+  let b = 1
+  strF += str
+  while (b <= n) {
+    strF += '*'
+    b++
+  }
+  return strF
+}
+
+function numberToPower(number, power){
+  console.log(number, power)
+  if (power < 1) return 1
+  if (power === 1) return number
+  let i = 1;
+  let pow = number
+  do {
+    pow *= number
+    i++
+  } while (i < power)
+return pow
+}
+
+function halvingSum(n) {
+     var s_sum = 0;
+    while (n > 0) {
+        s_sum += n;
+        n = Math.floor(n / 2);
+    }
+    return s_sum;  
+}
