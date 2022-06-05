@@ -868,3 +868,44 @@ function grabDoll(dolls){
 }
 
 //------------------------------------------------------------
+
+function solve(n) {
+  if (n % 10 !== 0) return -1
+  let amount = 0
+  for(let i = 1; n >= 10; i++) {
+    if (n >= 500) {
+      amount++
+      n -= 500
+    } else if (n >= 200) {
+       amount++
+      n -= 200
+    } else if (n >= 100) {
+      amount++
+      n -= 100
+    } else if (n >= 50) {
+      amount++
+      n -= 50
+    } else if (n >= 20) {
+      amount++
+      n -= 20
+    } else if (n >= 10) {
+      amount++
+      n -= 10
+    }
+  }
+  return amount
+}
+
+ function animals(heads, legs){
+ let cow = (legs - heads * 2) / 2;
+  let chicken = heads - (legs - heads * 2) / 2;
+  if (chicken < 0 || cow < 0 || Math.round(chicken) != chicken || Math.round(cow) != cow){
+    return "No solutions";
+  } else if(heads == 0 || legs == 0){
+    return [0, 0];
+  }else{
+    return [chicken, cow];
+  }
+}
+
+//------------------------------------------------------------
