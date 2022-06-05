@@ -909,3 +909,23 @@ function solve(n) {
 }
 
 //------------------------------------------------------------
+
+var FilterString = function(value) {
+  let result = '';
+  let bool = '';
+  for(let i = 0; i < value.length; i++){
+    bool = value[i]
+    if(isNaN(bool) === false) {
+      result += bool
+    }
+  } 
+  return +result
+}
+
+const isReallyNaN = (val) => {
+  console.log(val)
+    if (Number.isNaN(val) === true) return true
+    else return false
+};
+
+//------------------------------------------------------------
