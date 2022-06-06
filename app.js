@@ -936,3 +936,28 @@ function findStrangeValue() {
 
 //------------------------------------------------------------
 
+// Конспект
+// В JavaScript есть такие особенные числовые значения как Infinity и -Infinity, тип которых также определяется как number. Значение Infinity больше любого другого числа.
+
+// При делении любого числа на Infinity или -Infinity итогом всегда будет 0, а при совершении других математических операций с положительной или отрицательной бесконечностью мы получим Infinity или -Infinity (знак числа будет сохранён).
+
+let num = 20;
+console.log(num + Infinity); // Infinity
+console.log(-Infinity - num); // -Infinity, сохраняется знак минуса
+console.log(num / Infinity); // 0
+console.log(num * Infinity); // Infinity
+console.log(num * (-Infinity)); // -Infinity, сохраняется знак минуса
+// Для проверки, что число x является конечным, можно использовать функцию isFinite(x) или метод Number.isFinite(x).
+
+// Функция isFinite() преобразует, если необходимо, переданное значение в число, а затем определяет является ли оно конечным. Возвращает false для NaN, -Infinity, Infinity.
+
+// Метод Number.isFinite(x) возвращает true только для конечных чисел.
+
+console.log(isFinite('')); // true
+console.log(Number.isFinite('')); // false
+console.log(isFinite('20')); // true
+console.log(Number.isFinite('20')); // false
+console.log(isFinite(20)); // true
+console.log(Number.isFinite(20)); // true
+console.log(isFinite(Infinity)); // false
+console.log(Number.isFinite(-Infinity)); // false
