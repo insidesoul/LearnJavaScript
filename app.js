@@ -970,7 +970,21 @@ function SafeInteger(n) {
 
 //------------------------------------------------------------
 
+function makeNegative(num) {
+  return num < 0 ? num : -num
+}
 
+function opposite(number) {
+    return -number 
+}
+
+function invert(array) {
+  const arr = []
+   for(let i = 0; i < array.length; i++){
+      arr.push(-array[i])
+   }
+  return arr
+}
 
 //------------------------------------------------------------
 
