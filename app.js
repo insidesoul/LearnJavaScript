@@ -988,7 +988,21 @@ function invert(array) {
 
 //------------------------------------------------------------
 
+function multiply(number){
+  console.log(number)
+  let str = number + ""
+  str = str.length
+  console.log(str)
+  return number <  0 ? number * (Math.pow(5,str - 1)) : number * (Math.pow(5,str))
+}
 
+function sixToast(num) {
+  return Math.abs(6 - num)
+}
+
+function elevator(left, right, call){
+  return Math.abs(left - call) < Math.abs(right - call) ? 'left' : 'right' 
+}
 
 //------------------------------------------------------------
 
