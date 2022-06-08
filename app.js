@@ -1006,11 +1006,46 @@ function elevator(left, right, call){
 
 //------------------------------------------------------------
 
+function squareDigits(num){
+  let result = ''
+  num += '' 
+  for (let i = 0; i < num.length; i++) {
+    result = result + Math.pow(num[i],2)
+  }
+  return +result
+}
 
+function squares(x, n) {
+const arr = []
+for (let i = 1; i <= n; i++) {
+  arr.push(x)
+  x *= x
+}
+  return arr
+}
+
+function index(array, n){
+  return n+1 > array.length ? -1 : Math.pow(array[n],n)
+}
+
+const index = (array, n) => return n+1 > array.length ? -1 : Math.pow(array[n],n)
+
+function squareOrSquareRoot(array) {
+  return array.map(num => { 
+    if(Number.isInteger(Math.sqrt(num))) return Math.sqrt(num)
+    return Math.pow(num,2)
+  } )  
+}
 
 //------------------------------------------------------------
 
+var isSquare = function(n){
+  return Number.isInteger(Math.sqrt(n))
+}
 
+function findNextSquare(sq) {
+  return Math.sqrt(sq) % 1 === 0 ? Math.pow(Math.sqrt(sq) + 1, 2) : -1
+}
 
 //------------------------------------------------------------
 
