@@ -1049,7 +1049,10 @@ function findNextSquare(sq) {
 
 //------------------------------------------------------------
 
-
+function logs(x , a, b){
+  console.log(x,a,b)
+ return (Math.log(a) + Math.log(b)) / Math.log(x)
+}
 
 //------------------------------------------------------------
 
