@@ -1056,6 +1056,22 @@ function logs(x , a, b){
 
 //------------------------------------------------------------
 
+function cockroachSpeed(s) {
+  return Math.floor(s*1000*100/60/60)
+}
 
+function mango(quantity, price){
+  return (quantity - Math.floor(quantity / 3)) * price
+}
+
+function dutyFree(normPrice, discount, hol){
+ return Math.floor(hol/(normPrice / 100 * discount))
+}
+
+function toTime(seconds) {
+  let minutes = seconds/60
+  let hours = minutes%60
+   return `${Math.floor(minutes/60)} hour(s) and ${Math.floor(hours)} minute(s)`
+}
 
 //------------------------------------------------------------
