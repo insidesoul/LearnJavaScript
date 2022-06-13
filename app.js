@@ -1196,3 +1196,36 @@ function danspower(num, power) {
 
 //-----------------------------------------------------------------------------------
 
+function race(v1, v2, g) {
+
+  var willCatch = v2 - v1;
+  var catchTime = g / willCatch;  
+
+  var totalSeconds = catchTime * 60 * 60;  
+
+  var seconds = totalSeconds % 60;
+var totalMinutes = totalSeconds / 60;
+var minutes = totalMinutes % 60;
+var hours = totalMinutes / 60;
+
+  if (v1 >= v2) { return null; }
+  return     [Math.floor(hours),Math.floor(minutes),Math.floor(seconds)];
+}
+
+function coinCombo (cents) {
+  let pennies = 0;
+  let nickels = 0;
+  let dimes = 0;
+  let quarters = 0;
+  if (cents /  25 >= 1) {quarters = Math.trunc(cents/25)
+                        cents = cents - quarters * 25}
+  if (cents /  10 >= 1) {dimes = Math.trunc(cents/10)
+                        cents = cents - dimes * 10}
+  if (cents /  5 >= 1) {nickels = Math.trunc(cents/5)
+                       cents = cents - nickels * 5}
+  if (cents /  1 >= 1) {pennies = Math.trunc(cents/1)
+                       cents = cents - pennies * 1}
+  return [pennies, nickels, dimes, quarters]
+}
+
+//--------------------------------------------------------------------
