@@ -1173,3 +1173,16 @@ console.log(array.__proto__.__proto__ === Object.prototype); // true,
 // undefined и null находятся в стороне от других объектов в JavaScript: они не имеют методов и, соответственно, прототипов.
 
 // А вот number, boolean и string имеют временный объект-обертку, который проявляет себя в момент предоставления доступа к методам, а потом исчезает (встроенные конструкторы: Number, Boolean и String). Методы этих объектов находятся в прототипах Number.prototype, Boolean.prototype и String.prototype, соответственно (например, Number.prototype.toString(), String.prototype.split() и др.).
+
+//-----------------------------------------------------------------------------------
+
+function cookingTime(eggs) {
+  return Math.ceil(eggs/8)*5
+}
+
+function howManyTimes(annualPrice, individualPrice) {
+  return Math.ceil(annualPrice/individualPrice)
+}
+
+//-----------------------------------------------------------------------------------
+
