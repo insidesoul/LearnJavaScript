@@ -1299,3 +1299,17 @@ function  yourFutureCareer(){
   }
 
 //-------------------------------------------------------
+
+function addBinary(a,b) {
+ return (a+b).toString(2)
+}
+
+function evensAndOdds(num){
+  return num % 2 === 0? num.toString(2) : num.toString(16)
+}
+
+function toBinary(n){
+  return +n.toString(2);
+}
+
+//---------------------------------------------------------
