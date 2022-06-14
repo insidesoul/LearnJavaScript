@@ -1229,3 +1229,26 @@ function coinCombo (cents) {
 }
 
 //--------------------------------------------------------------------
+
+function minMax(arr){
+  return [Math.min(...arr), Math.max(...arr)]
+}
+
+function sumOfMinimums(arr) {
+
+  const sumOfMinNumbers = [];
+  
+  arr.forEach((minNum) => sumOfMinNumbers.push(Math.min(...minNum)));
+  return sumOfMinNumbers.reduce((x, y) => x + y);
+
+}
+
+function minimum(a, x) {
+  console.log(a, x)
+  if (a % x === 0) return 0
+  for (let i = 1; i < a+x; i++){
+    if ((a+i) % x === 0 || (a-i) % x === 0) {
+      return i
+    }
+  }
+}
