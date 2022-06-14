@@ -1252,3 +1252,37 @@ function minimum(a, x) {
     }
   }
 }
+
+//---------------------------------------------------------
+
+function consecutive(arr) {
+   return arr.length === 0 ? 0 : (Math.max(...arr) - Math.min(...arr) + 1 - arr.length)
+}
+
+function pipeFix(numbers){
+let result = []
+for (let i = Math.min(...numbers); i <= Math.max(...numbers); i++) {
+  result.push(i)
+}
+  return result
+}
+
+function betweenExtremes(numbers) {
+    return Math.max(...numbers) - Math.min(...numbers)
+}
+
+function getMinMax(arr){
+  return [Math.min(...arr), Math.max(...arr)]
+};
+
+function expressionMatter(a, b, c) {
+  console.log(a, b, c)
+  let v1 = a * (b + c)
+  let v2 = a * b * c
+  let v3 = a + b * c
+  let v4 = (a + b) * c
+  let v5 = a + b + c
+  return Math.max(v1, v2 , v3, v4, v5)
+}
+
+//---------------------------------------------------------
