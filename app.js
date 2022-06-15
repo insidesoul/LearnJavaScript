@@ -188,34 +188,34 @@ function squareRoot(x) {
 
 // Наиболее часто применяются следующие методы объекта Math:
 
-Math.abs(x) возвращает абсолютное значение числа x;
-Math.cos(x) возвращает косинус числа x (x – значение в радианах);
-Math.sin(x) возвращает синус числа x (x – значение в радианах);
-Math.atan() возвращает арктангенс числа (в радианах);
-Math.sqrt(x) возвращает квадратный корень числа x. Если число отрицательное, то вернется NaN;
-Math.pow(x, y) возвращает x в степени y;
-Math.floor(x) округление вниз. Округляет аргумент x до ближайшего меньшего целого;
-Math.ceil(x) округление вверх. Округляет аргумент x до ближайшего большего целого;
-Math.round(x) возвращает число, округлённое к ближайшему целому;
-Math.trunc(x) возвращает целую часть числа путём удаления всех дробных знаков;
-Math.max(x, y, ..., ) возвращает наибольшее из нуля или более чисел;
-Math.min(x,y, ..., ) возвращает наименьшее из нуля или более чисел;
-Math.random() возвращает псевдослучайное число с плавающей запятой из диапазона [0, 1), то есть, от 0 (включительно) до 1 (но не включая 1).
-Примеры:
+// Math.abs(x) возвращает абсолютное значение числа x;
+// Math.cos(x) возвращает косинус числа x (x – значение в радианах);
+// Math.sin(x) возвращает синус числа x (x – значение в радианах);
+// Math.atan() возвращает арктангенс числа (в радианах);
+// Math.sqrt(x) возвращает квадратный корень числа x. Если число отрицательное, то вернется NaN;
+// Math.pow(x, y) возвращает x в степени y;
+// Math.floor(x) округление вниз. Округляет аргумент x до ближайшего меньшего целого;
+// Math.ceil(x) округление вверх. Округляет аргумент x до ближайшего большего целого;
+// Math.round(x) возвращает число, округлённое к ближайшему целому;
+// Math.trunc(x) возвращает целую часть числа путём удаления всех дробных знаков;
+// Math.max(x, y, ..., ) возвращает наибольшее из нуля или более чисел;
+// Math.min(x,y, ..., ) возвращает наименьшее из нуля или более чисел;
+// Math.random() возвращает псевдослучайное число с плавающей запятой из диапазона [0, 1), то есть, от 0 (включительно) до 1 (но не включая 1).
+// Примеры:
 
-console.log(Math.abs(-9.3)); // 9.3
-console.log(Math.cos(0)); // 1
-console.log(Math.sin(0)); // 0
-console.log(Math.sqrt(9)); // 3
-console.log(Math.pow(2, 3)); // 8
-console.log(Math.floor(3.56)); // 3
-console.log(Math.ceil(3.14)); // 4
-console.log(Math.round(3.5)); // 4 
-console.log(Math.trunc(3.9)); // 3
-console.log(Math.max(3, 5, 2)); // 5
-console.log(Math.min(3, 5, 2)); // 2
-console.log(Math.random()); // 0.9991760164762054 (случайное число от 0 до 1)
-// Пример функции, которая вычисляет площадь круга радиусом r:
+// console.log(Math.abs(-9.3)); // 9.3
+// console.log(Math.cos(0)); // 1
+// console.log(Math.sin(0)); // 0
+// console.log(Math.sqrt(9)); // 3
+// console.log(Math.pow(2, 3)); // 8
+// console.log(Math.floor(3.56)); // 3
+// console.log(Math.ceil(3.14)); // 4
+// console.log(Math.round(3.5)); // 4 
+// console.log(Math.trunc(3.9)); // 3
+// console.log(Math.max(3, 5, 2)); // 5
+// console.log(Math.min(3, 5, 2)); // 2
+// console.log(Math.random()); // 0.9991760164762054 (случайное число от 0 до 1)
+// // Пример функции, которая вычисляет площадь круга радиусом r:
 
 function circle(r){
   return Math.floor(Math.PI * Math.pow(r, 2)); 
@@ -1028,7 +1028,7 @@ function index(array, n){
   return n+1 > array.length ? -1 : Math.pow(array[n],n)
 }
 
-const index = (array, n) => return n+1 > array.length ? -1 : Math.pow(array[n],n)
+// const index = (array, n) => return n+1 > array.length ? -1 : Math.pow(array[n],n)
 
 function squareOrSquareRoot(array) {
   return array.map(num => { 
@@ -1325,6 +1325,38 @@ function excludingVatPrice(price){
   if (price === 0) return 0 
   if (price < 1) return -1
   return +((price)-(price/115*15)).toFixed(2)
+}
+
+//------------------------------------------------------------
+
+console.clear()
+
+{
+  let a = 5;
+  let b = {
+    area: function(){console.log("Площадь")}
+  }
+  console.log(a.toString())
+  b.area()
+  let c = {}
+  console.log(c)
+  console.log(b)
+  let cc = []
+  console.log(cc)
+}
+
+//----------------------------------------------------------
+
+function getAge(inputString){
+ return parseInt(inputString, 10)
+}
+
+function hexToDec(hexString){
+  return parseInt(hexString, 16)
+}
+
+function binToDec(bin){
+  return parseInt(bin, 2)
 }
 
 //------------------------------------------------------------
