@@ -1313,3 +1313,18 @@ function toBinary(n){
 }
 
 //---------------------------------------------------------
+
+function barTriang(p1, p2, p3){
+  let x = (p1[0] + p2[0] + p3[0]) / 3
+  let y = (p1[1] + p2[1] + p3[1]) / 3
+  return [+((x).toFixed(4)), +((y).toFixed(4))]
+}
+
+function excludingVatPrice(price){
+  console.log(price)
+  if (price === 0) return 0 
+  if (price < 1) return -1
+  return +((price)-(price/115*15)).toFixed(2)
+}
+
+//------------------------------------------------------------
