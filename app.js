@@ -1366,3 +1366,56 @@ function parseF(s) {
 }
 
 //----------------------------------------------------------
+
+function sum (numbers) {
+  let sumArr = 0;
+  for(let i = 0; i < numbers.length; i++) {
+    sumArr += numbers[i]
+  }
+  return sumArr
+};
+
+function monkeyCount(n) {
+ let num = []
+ for(let i = 1; i <= n; i++){
+   num.push(i)
+ }
+  return num
+}
+
+const arr = N => {
+let result = []
+for(let i = 0; i <= N-1; i++){
+  result.push(i)
+}
+  return result
+}
+
+function getLength(arr){
+  return arr.length
+}
+function getFirst(arr){
+  return arr[0]
+}
+function getLast(arr){
+  return arr[arr.length-1]
+}
+function pushElement(arr){
+  let el=1;
+  arr.push(el)
+  return arr
+}
+function popElement(arr){
+  arr.pop()
+  return arr
+}
+
+function generateIntegers(m, n) {
+  let arr = []
+  for(let i = m; i <= n; i++){
+    arr.push(i)
+  }
+  return arr
+}
+
+//---------------------------------------------------
