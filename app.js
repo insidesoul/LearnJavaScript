@@ -1419,3 +1419,16 @@ function generateIntegers(m, n) {
 }
 
 //---------------------------------------------------
+
+function type(value) {
+ return ({}.toString.call(value)).split(' ')[1].toLowerCase().slice(0, -1)
+}
+
+const arrCheck = value => {
+  for(let i = 0; i < value.length; i++){
+   if (Array.isArray(value[i]) === false) return false
+  }
+  return true
+}
+
+//----------------------------------------------------
