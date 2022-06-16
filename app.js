@@ -1495,3 +1495,33 @@ function solve(a, b) {
   else if(a[2] < b[2])b1++
   return a1 > b1 ? `${a1}, ${b1}: Alice made "Kurt" proud!` : a1 === b1 ? `${a1}, ${b1}: that looks like a "draw"! Rock on!` : `${a1}, ${b1}: Bob made "Jeff" proud!` 
 }
+
+function points(games) {
+  let x = games[0];
+  let result = 0;
+  for(let i = 0; i < games.length; i++){
+    x = games[i]
+    if (x[0] > x[2]) result += 3
+    if (x[0] === x[2]) result ++
+  }
+  return result
+}
+
+const catchSignChange = arr => {
+  console.log(arr)
+  let result = 0;
+  for(let i = 0; i < arr.length; i++){
+    if((arr[i] >= 0 && arr[i+1] < 0) || (arr[i] < 0 && arr[i+1] >= 0)) result++
+  }
+  return result
+}
+
+//-------------------------------------------------------------
+
+function squareSum(numbers){
+  let sum = 0;
+  for(let i = 0; i < numbers.length; i++){
+    sum = sum + numbers[i] ** 2
+  }
+  return sum
+}
