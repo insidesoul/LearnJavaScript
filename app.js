@@ -1680,3 +1680,108 @@ function maxDiff(list) {
 };
 
 //----------------------------------------------------
+
+websites.push('codewars')
+
+items = []
+items.push({a: "b", c: "d"})
+
+function sumOfN(n) {
+  let arr = [0]
+  for(let i = 0; i <= Math.abs(n); i++){
+    if(n < 0) arr.push(arr[i] - i)
+     else arr.push(arr[i] + i)
+  }
+   arr.shift()
+  return arr
+};
+
+function countBy(x, n) {
+  let z = [];
+  for(let i = x; i <= x*n; i += x){
+    z.push(i)
+  }
+  return z;
+}
+
+function generateRange(min, max, step){
+  let arr = []
+  for(let i = min; i <= max; i += step){
+    arr.push(i)
+  }
+  return arr
+}
+
+function preFizz(n) {
+  let arr = []
+  for(let i = 1; i <= n; i++){
+    arr.push(i)
+  }
+  return arr
+}
+
+function powersOfTwo(n){
+  let arr = []
+  for(let i = 0; i <= n; i++){
+    arr.push(2 ** i)
+  }
+  return arr
+}
+
+function multiples(s1,s2,s3){
+  let arr = []
+  for(let i = s1; i < s3; i += s1){
+    if(i % s2 === 0) arr.push(i)
+  }
+  return arr
+}
+
+function generateIntegers(n) {
+  let arr = []
+  for(let i = 0; i <= n; i++){
+    arr.push(i)
+  }
+  return arr
+}
+
+function findMultiples(integer, limit) {
+  let arr = []
+  for(let i = integer; i <= limit; i += integer){
+    arr.push(i)
+  }
+  return arr
+}
+
+function range(startNum, endNum)   
+{  
+ let arr = []
+  for(let i = startNum + 1; i < endNum; i++){
+   arr.push(i) 
+  }
+  return arr
+ }; 
+
+ function solve(a,b){
+  let arr = []
+  for(let i = 0; i < b.length; i++){
+    let amount = 0;
+    for(let c = 0; c < a.length; c++){
+      if(b[i] === a[c]) amount++
+    }
+    arr.push(amount)
+  }
+  return arr
+}
+
+//------------------------------------------
+
+function cleanString(s) {
+  let arr = []
+  for(let i = 0; i < s.length; i++){
+    if(s[i] !== '#') arr.push(s[i])
+    else arr.pop()
+  }
+  return arr.join('')
+}
+
+//-------------------------------------------
