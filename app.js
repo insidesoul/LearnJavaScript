@@ -1432,3 +1432,66 @@ const arrCheck = value => {
 }
 
 //----------------------------------------------------
+
+function countSheeps(arrayOfSheep) {
+  let sum = 0;
+  for(let i = 0; i < arrayOfSheep.length; i++) {
+    if (arrayOfSheep[i] === true) sum++
+  }
+  return sum
+}
+
+function crap(x, bags, cap){
+  let amount = bags * cap
+  let arr = [];
+  for(let i = 0; i < x.length; i++){
+    arr = x[i]
+    for(let i = 0; i < arr.length; i++){
+      if(arr[i] === 'D') return 'Dog!!'
+      if(arr[i] === '@') amount--
+    }
+  }
+  return amount < 0 ? 'Cr@p' : 'Clean'
+}
+
+function findDifference(a, b) {
+  let a1 = 1;
+  let b1 = 1;
+  for(let i = 0; i < a.length; i++){
+    a1 *= a[i]
+    b1 *= b[i]
+  }
+  return Math.abs(a1 - b1)
+}
+
+function firstNonConsecutive (arr) {
+  let result = arr[0]
+  for(let i = 1; i < arr.length; i++){
+     if (arr[i] - result !== 1) return arr[i]
+    result = arr[i]
+  }
+  return null
+}
+
+function pairs(ar){
+  let count = 0;
+ for(let i = 1; i < ar.length; i++){
+   if(i % 2 === 1){
+     if((Math.abs(ar[i] - ar[i-1])) === 1) count++
+   }
+ }
+  return count
+};
+
+function solve(a, b) {
+  console.log(a,b)
+ let a1 = 0
+ let b1 = 0
+ if(a[0] > b[0]) a1++
+  else if(a[0] < b[0])b1++
+   if(a[1] > b[1]) a1++
+  else if(a[1] < b[1])b1++
+   if(a[2] > b[2]) a1++
+  else if(a[2] < b[2])b1++
+  return a1 > b1 ? `${a1}, ${b1}: Alice made "Kurt" proud!` : a1 === b1 ? `${a1}, ${b1}: that looks like a "draw"! Rock on!` : `${a1}, ${b1}: Bob made "Jeff" proud!` 
+}
