@@ -1525,3 +1525,158 @@ function squareSum(numbers){
   }
   return sum
 }
+
+function betterThanAverage(classPoints, yourPoints) {
+  let average = 0
+  for(let i = 0; i < classPoints.length; i++){
+    average += classPoints[i]
+  }
+  return (average / classPoints.length) < yourPoints ? true : false
+}
+
+var number = function(busStops){
+  let still = 0;
+  let stops = 0;
+  for(let i = 0; i < busStops.length; i++){
+    stops = busStops[i]
+      still = still + (stops[0] - stops[1])
+  }
+  return still
+}
+
+function positiveSum(arr) {
+  let sum = 0;
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] > 0) sum += arr[i]
+  }
+  return sum
+}
+
+function countPositivesSumNegatives(input) {
+  console.log(input)
+  if (input === null  || input.length < 1) return []
+    let sum = 0;
+    let total = 0;
+  for(let i = 0; i < input.length; i++){
+    if(input[i] > 0) total++
+    else sum += input[i]
+  }
+  return [total, sum]
+}
+
+function find_average(array) {
+  console.log(array)
+  if (array.length < 1) return 0
+  let average = 0;
+  for(let i = 0; i < array.length; i++){
+    average += array[i]
+  }
+  return average / array.length
+}
+
+function divCon(x){
+  console.log(x)
+  let number = 0;
+  let string = 0;
+  for(let i = 0; i < x.length; i++){
+    if(typeof(x[i]) === 'string') string += +(x[i])
+    else number += x[i]
+  }
+  return number - string
+}
+
+function cubeOdd(arr) {
+  console.log(arr)
+  let total = 0;
+  for(let i = 0; i < arr.length; i++){
+    if(typeof(arr[i]) !== 'number') return undefined
+    
+    if(Math.abs(arr[i]) % 2 === 1) {
+      arr[i] = Math.pow(arr[i], 3)
+      total += arr[i]
+    }
+  }
+  console.log(total)
+  return total
+}
+
+function sumEvenNumbers(input) {
+  let sum = 0;
+  for(let i = 0; i < input.length; i++){
+    if(input[i] % 2 === 0) sum += input[i]
+  }
+  return sum
+}
+
+function inviteMoreWomen(L) {
+  let w = 0
+  let m = 0
+  for(let i = 0; i < L.length; i++){
+    if(L[i] > 0) m++
+    else w++
+  }
+  return m > w ? true : false
+}
+
+function oddOrEven(array) {
+  let sum = 0;
+  for(let i = 0; i < array.length; i++){
+    sum += array[i]
+  }
+  return sum % 2 === 0 ? 'even' : 'odd'
+}
+
+function rowWeights(array){
+  let firstT = 0;
+  let secondT = 0;
+  for (let i = 0; i < array.length; i++){
+    if(i % 2 === 0) firstT += array[i]
+    else secondT += array[i]
+  }
+  return [firstT, secondT]
+}
+
+function getDay(day, isLeap){
+  let arrD = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+  let arrM = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  if(isLeap === true) arrD[1] = 29
+  for(let i = 0; i < arrD.length; i++){
+    if(day > arrD[i]) day -= arrD[i]
+    else return `${arrM[i]}, ${day}`
+  }
+}
+
+//-----------------------------------------------
+
+function gimme (triplet) {
+  for(let i = 0; i < 3; i++){
+    if(triplet[i] !== Math.min(...triplet) && triplet[i] !== Math.max(...triplet)) return i
+  }
+} 
+
+function sumArray(array) {
+  let sum = 0;
+  if(Array.isArray(array) === false || array.length < 3) return 0
+  for(let i = 0; i < array.length; i++){
+    sum += array[i]
+  }
+  return sum - Math.min(...array) - Math.max(...array)
+}
+
+var min = function(list){
+    
+    return Math.min(...list);
+}
+
+var max = function(list){
+    
+    return Math.max(...list);
+}
+
+function maxDiff(list) {
+  console.log(list)
+  if(list.length < 2) return 0
+  return Math.abs(Math.min(...list)) + (Math.max(...list))
+};
+
+//----------------------------------------------------
