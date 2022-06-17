@@ -1844,3 +1844,14 @@ function consecutive(arr, a, b) {
 }
 
 //--------------------------------------------------------
+
+function swapTwo(array, a, b) {
+  console.log(array, a, b)
+  let a1 = array.indexOf(a)
+  let b1 = array.lastIndexOf(b)
+  array[a1] = b
+  array[b1] = a
+  return [...array]
+}
+
+//----------------------------------------------------
