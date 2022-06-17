@@ -1803,3 +1803,44 @@ const reverseSeq = n => {
 };
 
 //----------------------------------------
+
+function include(arr, item){
+  return arr.includes(item, 0)
+}
+
+function check(a,x){
+  return a.includes(x)
+};  
+
+//----------------------------------------
+
+function min(arr, toReturn) {
+  if(toReturn === 'value') return Math.min(...arr)
+  else return arr.indexOf(Math.min(...arr), 0)
+}
+
+function findNeedle(haystack) {
+  return `found the needle at position ${haystack.indexOf('needle')}`
+}
+
+function find(a,b) {let i =a.indexOf(b)
+  return i===-1?'Not found':i}
+
+  function meeting(x){
+ return x.indexOf('O') < 0 ? 'None available!' : x.indexOf('O')
+}
+
+function warnTheSheep(queue) {
+ return queue.length - 1 - (queue.indexOf('wolf')) > 0 ? `Oi! Sheep number ${queue.length - 1 - (queue.indexOf('wolf'))}! You are about to be eaten by a wolf!` : "Pls go away and stop eating my sheep"
+}
+
+function consecutive(arr, a, b) {
+  console.log(arr, a, b)
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] === b && arr[i+1] === a) return true
+    else if (arr[i] === a && arr[i+1] === b) return true
+  }
+  return false
+}
+
+//--------------------------------------------------------
