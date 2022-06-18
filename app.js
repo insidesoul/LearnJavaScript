@@ -1855,3 +1855,59 @@ function swapTwo(array, a, b) {
 }
 
 //----------------------------------------------------
+
+function getEvenNumbers(numbersArray){
+  const arr = numbersArray.filter(el => el % 2 === 0)
+  return arr
+}
+
+function filter_list(l) {
+  const arr = l.filter(el => typeof(el) === 'number')
+  return arr
+}
+
+function one(arr, fun){
+  return arr.filter(fun).length == 1;
+}
+
+function friend(friends){
+  return friends.filter(el => el.length === 4)
+}
+
+function divisibleBy(numbers, divisor){
+  return numbers.filter(el => el % divisor === 0)
+}
+
+function removeEveryOther(arr){
+  return arr.filter((el, i) => i % 2 === 0)
+}
+
+function gooseFilter (birds) {
+  var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+  return birds.filter(el => !geese.includes(el))
+};
+
+function arrayDiff(a, b) {
+  return a.filter(el => !b.includes(el))
+}
+
+var filterLucky=x=>{
+  return x.filter(el=>el.toString().includes(7));
+}
+
+function mergeArrays(a, b) {
+  const ab = []
+  l = Math.min(a.length, b.length);
+  for (let i = 0; i < l; i++) {
+    ab.push(a[i], b[i]);
+}
+ab.push(...a.slice(l), ...b.slice(l));
+  return ab
+  
+}
+
+function filterEvenLengthWords(words) {
+  return words.filter((el => el.length % 2 === 0))
+}
+
+//------------------------------------------------
