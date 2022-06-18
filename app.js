@@ -1918,3 +1918,13 @@ function solve(arr) {
 }
 
 //--------------------------------------------------
+
+function findDup( arr ){
+
+   const ar = arr.filter((el, i) => i !== arr.indexOf(el) && i === arr.lastIndexOf(el))
+    return ar[0]
+   }
+
+const duplicates = arr => arr.filter((v, i) => arr.indexOf(v) !== i && arr.lastIndexOf(v) === i);
+
+//-----------------------------------------------------
