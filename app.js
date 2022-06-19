@@ -1928,3 +1928,41 @@ function findDup( arr ){
 const duplicates = arr => arr.filter((v, i) => arr.indexOf(v) !== i && arr.lastIndexOf(v) === i);
 
 //-----------------------------------------------------
+
+function uniqueNumbers(rra) {
+  console.log(rra)
+    return rra.filter((el, i) => (rra.indexOf(el) === rra.lastIndexOf(el) || i === rra.indexOf(el) && i !== rra.lastIndexOf(el)))
+}
+
+function completeSeries(arr) {
+  let a = []
+  for(let i = 0; i <= Math.max(...arr); i++){
+    if(arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])) return [0]
+    a.push(i)
+  }
+  return a
+}
+
+function unique(arr) {
+  console.log(arr)
+  return arr.filter((el, i) => arr.indexOf(el) === arr.lastIndexOf(el) || i === arr.indexOf(el) && i !== arr.lastIndexOf(el))
+}
+
+function noRepeat(str) {  
+  console.log(str)
+  const arr = str.split('').filter((el, i) => str.indexOf(el) === str.lastIndexOf(el))
+  return arr[0]
+}
+
+//---------------------------------------
+
+function digitize(n) {
+  let str = n + ''
+  str = str.split('')
+  let result = str.map(el => +el)
+  return result.reverse()
+}
+
+function fixTheMeerkat(arr) {
+ return arr.reverse()
+}
