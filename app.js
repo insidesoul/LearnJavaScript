@@ -1966,3 +1966,156 @@ function digitize(n) {
 function fixTheMeerkat(arr) {
  return arr.reverse()
 }
+
+//------------------------------------------
+
+function reverse(arr) {
+ for (let i = 0; i < arr.length / 2; i++) {
+  let temp = arr[i];
+  arr[i] = arr[arr.length - 1 - i];
+  arr[arr.length - 1 - i] = temp;
+}
+  return arr
+}
+
+//-------------------------------------------
+
+function addExtra( listOfNumbers ){
+  return listOfNumbers.concat('a')
+}
+
+//-------------------------------------------
+
+function twoOldestAges(ages){
+ ages = ages.sort((a, b) => b-a)
+  return [ages[1], ages[0]]
+}
+
+function solution(nums){
+  if(nums === [] || nums === null) return []
+  return nums.sort((a, b) => a-b)
+}
+
+sortme = function( names ){
+ return names.sort() 
+}
+
+function largestPairSum (numbers) {
+  numbers = numbers.sort((a, b) => b-a)
+  return (numbers[0] + numbers[1])
+}
+
+function sumTwoSmallestNumbers(numbers) {  
+  numbers = numbers.sort((a, b) => a - b)
+  return numbers[0]+numbers[1]
+}
+
+function longest(s1, s2) {
+  console.log(s1, s2)
+  let arr1 = s1.split('')
+  let arr2 = s2.split('')
+  let arr = arr1.concat(arr2)
+  console.log
+  return arr.filter((el, i) => i === arr.indexOf(el) && i !== arr.lastIndexOf(el) || arr.indexOf(el) === arr.lastIndexOf(el)).sort().join('')
+}
+
+function bigToSmall(arr){
+  return [].concat(...arr).sort((a,b) => b-a).join('>')
+}
+
+function sortByLength (array) {
+  return array.sort((a, b) => a.length-b.length)
+};
+
+function solve(arr){
+  console.log(arr)
+    arr.sort((a, b) => b-a)
+    let array = []
+    let b = arr.length-1
+    let arleng = arr.length/2
+    for(let i = 0; i < arleng; i++){
+      array.push(arr[i])
+      array.push(arr[b])
+      b--
+    }
+     arr.length%2 === 1 ? array.pop() : array
+  return array
+};
+
+function findChildren(santasList, children) {
+  let ans = [];
+  for (let i=0; i<santasList.length; ++i)
+    for (let j=0; j<children.length; ++j)
+      if (ans.indexOf(children[j])==-1 && santasList[i]==children[j])
+        ans.push(children[j]);
+  return ans.sort();
+}
+
+function minSum(arr) {
+  arr.sort((a, b) => a-b)
+  let sum = 0;
+  let b = arr.length-1
+  for(let i = 0; i < arr.length/2; i++){
+    sum = sum + (arr[i] * arr[b])
+    b--
+  }
+  return sum
+}
+
+function minimumSteps(numbers, value){
+  console.log(numbers, value)
+  numbers.sort((a, b) => a-b)
+  let sum = 0;
+  let num = 0
+  for(let i = 0; i < numbers.length; i++){
+    sum = sum + numbers[i]
+    num++
+    if(sum >= value) return num -1
+  }
+  return num
+}
+
+function sumOfDifferences(arr) {
+  arr.sort((a, b) => b-a)
+  let sum = 0
+  console.log(arr)
+  for(let i = 0; i < arr.length-1; i++){
+    sum = sum + (arr[i] - arr[i+1])
+  }
+  return sum
+}
+
+//---------------------------------------------
+
+function smash (words) {
+   return words.join(' ')
+};
+
+function buildString(...template){
+  return `I like ${template.join(', ')}!`;
+}
+
+function arithmeticSequenceElements(a,r,n) {
+  let arr = []
+  for(let i = 0; i < n; i++){
+    arr.push(a)
+    a += r
+  }
+  return arr.join(', ')
+}
+
+function printArray(array){
+  return array.join()
+}
+
+const binaryArrayToNumber = arr => {
+  let str = arr.join('')
+  console.log(str)
+  return parseInt(str, 2)
+};
+
+function toCsvText(array) {
+   return array.join('\n')
+}
+
+//-----------------------------------------------------
