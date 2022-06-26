@@ -2119,3 +2119,128 @@ function toCsvText(array) {
 }
 
 //-----------------------------------------------------
+
+function all( arr, fun ){
+  return arr.every(fun)
+}
+
+function validateWord(s){
+  console.log(s)
+  s = s.toLowerCase().split('')
+  if(s.every((el, i) => s.indexOf(el) === s.lastIndexOf(el))) return true
+  else if(s.every((el, i) => s.indexOf(el) !== s.lastIndexOf(el))) return true
+  else return false
+}
+
+function inAscOrder(arr) {
+for(var i = 0; i < arr.length-1; i++){
+   if(arr[i] > arr[i+1]){
+     return false;
+   } 
+  }
+ return true;
+}
+
+function solve(arr){
+  console.log(arr)
+  const result = []
+  let fls = 0;
+  for(let i = 0; i < arr.length; i++){
+    fls = 0
+    for(let j = i; j < arr.length; j++){
+      if(arr[i] <= arr[j+1]){
+        fls = 0
+        break
+      }
+      else fls++
+    }
+    if(fls > 0) result.push(arr[i])
+  }
+  return result
+};
+
+//-------------First-5-kyu-kata------------------------
+
+function incrementString (strng) {
+  strng = strng.split('')
+  let prob = strng.filter(el => +el > -1).map(el => +el).join('')
+  let arr = (+prob + 1) + ''
+  let al = (+arr - 1 + '').length
+  if(prob <= 0) al = 0
+  if(prob.length > al) {
+    if(arr.length > al) al += 1 
+  }
+  for(let b = 0; b < al; b++){
+        strng.pop()
+    }  
+  for(let i = 0; i < arr.length; i++){    
+      strng.push(arr[i])
+    }
+  return strng.join('')
+}
+
+//-------------------------------------------------------
+
+function any(arr, fun){
+  return arr.some(fun)
+}
+
+//-------------------------------------------------------
+
+var findAverage = function (nums) {
+  return nums.reduce((acc, curr) => acc + curr, 0)/nums.length
+}
+
+function avg(a){
+  return a.reduce((acc, curr) => acc + curr, 0)/a.length
+}
+
+function mean(lst){
+  let num = lst.filter(el => !isNaN(Number(el))).map(el => +el).reduce((acc, curr) => acc + curr, 0)/10
+  console.log(num)
+  let str = lst.filter(el => isNaN(Number(el))).reduce((acc, curr) => acc + curr)
+  console.log(str)
+  return [num, str]
+}
+
+function sumSquares(array) {
+  return array.map(el => el ** 2).reduce((acc, curr) => acc + curr, 0)
+}
+
+function arrayMadness(a, b) {
+  a = a.map(el => el ** 2).reduce((acc, curr) => acc + curr, 0)
+  b = b.map(el => el ** 3).reduce((acc, curr) => acc + curr, 0)
+  return b<a
+}
+
+function grow(x){
+  return x.reduce((acc, curr) => acc * curr,1)
+}
+
+function multi(arr) {
+  return arr.reduce((acc, curr) => acc * curr, 1)
+}
+function add(arr) {
+  return arr.reduce((acc, curr) => acc + curr, 0)
+}
+function reverse(str) {
+  return str.split('').reverse('').join('')
+}
+
+function findDeletedNumber(arr, mixArr) {
+  arr = arr.reduce((acc, curr) => acc + curr, 0)
+  mixArr = mixArr.reduce((acc, curr) => acc + curr, 0)
+  return arr - mixArr
+}
+
+function arrayPlusArray(arr1, arr2) {
+  arr1 = arr1.reduce((acc, curr) => acc + curr, 0)
+  arr2 = arr2.reduce((acc, curr) => acc + curr, 0)
+  return arr1 + arr2
+}
+
+function predictAge(age1,age2,age3,age4,age5,age6,age7,age8){
+  let arr = [age1,age2,age3,age4,age5,age6,age7,age8]
+  arr = Math.sqrt(arr.map(el => el * el).reduce((acc, curr) => acc + curr, 0)) / 2
+  return Math.floor(arr)
+}
