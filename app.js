@@ -2244,3 +2244,35 @@ function predictAge(age1,age2,age3,age4,age5,age6,age7,age8){
   arr = Math.sqrt(arr.map(el => el * el).reduce((acc, curr) => acc + curr, 0)) / 2
   return Math.floor(arr)
 }
+
+//---------------------------------------------------------------------
+
+function toFreud(string) {
+  if (string === '') return ''
+return string.split(' ').map(el => 'sex').join(' ')
+}
+
+function toNumberArray(stringarray){
+  return stringarray.map(el => +el)
+}
+
+function maps(x){
+  return x.map(el => el * 2)
+}
+
+function skiponacci(n) {
+  
+  let x = 0;
+  let y = 1;
+  let z;
+  let result = [1, ];
+  
+  for (let i = 1; i < n; i += 1) {
+    z = x + y
+    x = y;
+    y = z;
+    result.push(z);
+  }
+  
+  return result.map((elm, idx, _) => idx % 2 !== 0 ? 'skip' : elm).join(' ');
+}
