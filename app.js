@@ -2276,3 +2276,11 @@ function skiponacci(n) {
   
   return result.map((elm, idx, _) => idx % 2 !== 0 ? 'skip' : elm).join(' ');
 }
+
+//----------------------------------------------------
+
+function take(arr, n) {
+  return arr.splice(0, n)
+}
+
+//----------------------------------------------------
