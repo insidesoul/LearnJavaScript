@@ -2284,3 +2284,59 @@ function take(arr, n) {
 }
 
 //----------------------------------------------------
+
+function head(a) {
+  let head = a[0]
+  return head
+}
+function tail(a) {
+  let tail = a.slice(1)
+  return tail
+}
+function init(a) {
+  let init = a.slice(0, -1)
+  return init
+}
+function last(a) {
+  let last = a[a.length-1]
+  return last
+}
+
+function array(arr){
+  arr = arr.split(',')
+  if(arr.length < 3) return null
+  return arr.slice(1,-1).join(' ')
+}
+
+function cutIt(arr){
+  let leng = arr[0].length
+  for(let i = 0; i<arr.length; i++){
+    if(arr[i].length < leng) leng = arr[i].length
+  }
+  let newArr = []
+  for(let i = 0; i < arr.length; i++){
+    newArr.push(arr[i].slice(0,leng))
+  }
+  return newArr
+}
+
+function withoutLast(arr) {
+  let arr1 = arr.slice(0,-1)
+  return arr1;
+}
+
+var arrayLeaders = numbers => {
+  let answer = [];
+
+  for (let i=0; i<numbers.length; i++){
+    let sum = 0;
+    for (let j=i+1; j<numbers.length; j++){ 
+      sum += numbers[j];                      
+    }
+    
+    if(numbers[i] > sum){
+      answer.push(numbers[i]);
+    }
+  }
+  return answer;
+}
