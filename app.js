@@ -2556,3 +2556,56 @@ function pattern(n){
 }
 
 //----------------------------------------------------
+
+function XO(str) {
+  str = str.toLowerCase()
+  let x = 0;
+  let o = 0;
+  for(let i = 0; i < str.length; i++){
+    if(str[i] === 'x') x++
+    if(str[i] === 'o') o++
+  }
+  return x === o
+}
+
+function getDrinkByProfession(param) {
+  param = param.toLowerCase();
+  
+  switch(param) {
+    case "jabroni": return "Patron Tequila";
+    case "school counselor": return "Anything with Alcohol";
+    case "programmer": return "Hipster Craft Beer";
+    case "bike gang member": return "Moonshine";
+    case "politician": return "Your tax dollars";
+    case "rapper": return "Cristal";
+    default: return "Beer";
+  }
+}
+
+function hello(name) {
+  console.log(name)
+  if(name === '' || name === undefined) return 'Hello, World!'
+  name = name.toLowerCase()
+  let firstSym = name[0].toUpperCase()
+  let otherSym = name.slice(1)
+  return `Hello, ${firstSym.concat(otherSym)}!`
+}
+
+function mouthSize(animal) {
+  animal = animal.toLowerCase()
+  return animal === 'alligator' ? 'small' : 'wide'
+}
+
+function solve(s){
+  let up = 0
+  let low = 0
+  let sUp = s.toUpperCase()
+  let sLow = s.toLowerCase()
+  for(let i = 0; i < s.length; i++){
+    if(sUp[i] === s[i]) up++
+    if(sLow[i] === s[i]) low++
+  }
+  return up > low ? s.toUpperCase() : s.toLowerCase()
+}
+
+//-----------------------------------------------------
