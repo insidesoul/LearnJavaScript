@@ -2340,3 +2340,73 @@ var arrayLeaders = numbers => {
   }
   return answer;
 }
+
+//-------------------------------------------------
+
+function greet(name){
+  if(name === "Johnny")
+    return "Hello, my love!";
+  else
+    return "Hello, " + name + "!";
+}
+
+var TempleStrings = function(obj, feature) {
+  return `${obj} are ${feature}`
+}
+
+function combineNames(names, second){
+  return names + ' ' + second
+}
+
+var a = "dev"
+var b = "Lab"
+
+var name = a + b
+console.log(name)
+
+function sayHello(name) {
+  return `Hello, ${name}`
+}
+
+var a1="A",a2="a",b1="B",b2="b",c1="C",c2="c",d1="D",d2="d",e1="E",e2="e",n1="N",n2="n"
+function Dad(){
+  return d1+a2+d2;
+}
+function Bee(){
+  return b1+e2+e2;
+}
+function banana(){
+  return b2+a2+n2+a2+n2+a2;
+}
+function answer1(){
+  return "no";
+}
+function answer2(){
+  return "no";
+}
+function answer3(){
+  return "yes";
+}
+
+function uefaEuro2016(teams, scores){
+  return `At match ${teams[0]} - ${teams[1]}, ${scores[0] > scores[1] ? `${teams[0]} won!`: scores[0] < scores[1] ? `${teams[1]} won!` : 'teams played draw.'}`
+}
+
+function joinStrings(string1, string2){
+   return `${string1} ${string2}`
+}
+
+function derive(coefficient,exponent) {
+  return `${coefficient * exponent}x^${exponent - 1}`
+}
+
+var countSheep = function (num){
+  let result = ''
+  for(let i = 1; i <= num; i++){
+    result = result + i + ' sheep...' 
+  }
+  return result
+}
+
+//-----------------------------------------------------------
+
