@@ -2531,3 +2531,28 @@ function spacify(str) {
 }
 
 //----------------------------------------------------
+
+function isPalindrome(x) {
+ let palind = ''
+ for(let i = x.length-1; i >= 0; i--){
+   palind += x[i]
+ }
+  console.log(x)
+  return palind.toLowerCase() === x.toLowerCase()
+}
+
+//------------------------------------------------------
+
+function pattern(n){
+ let output="1";
+  for(let i = 2; i <= n; i++){
+    output += '\n1'
+    for(let b = 1; b < i; b++){
+      output += '*'
+    }
+    output += i
+  }
+ return output;
+}
+
+//----------------------------------------------------
