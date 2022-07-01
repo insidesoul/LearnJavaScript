@@ -2609,3 +2609,43 @@ function solve(s){
 }
 
 //-----------------------------------------------------
+
+var capitals = function (word) {
+  let arr = []
+  for(let i = 0; i < word.length; i++){
+    if(word[i].toUpperCase() === word[i]) arr.push(i)
+  }
+  return arr
+};
+
+function swap(str){
+  let strRev = ''
+  for(let i = 0; i < str.length; i++){
+    if(str[i] === str[i].toUpperCase()) strRev += str[i].toLowerCase()
+    else strRev += str[i].toUpperCase()
+  }
+  return strRev
+}
+
+function accum(s) {
+  let str = ''
+  for(let i = 0; i < s.length; i++){
+    str += s[i].toUpperCase()
+    for(let b = 0; b < i; b++){
+      str += s[i].toLowerCase()
+    }
+    str += '-'
+  }
+  return str.slice(0, -1)
+}
+
+function makeUpperCase(str) {
+  return str.toUpperCase()
+}
+
+function capitalizeWord(word) {
+  let first = word[0].toUpperCase();
+  return first + word.slice(1)
+}
+
+//------------------------------------------------------
