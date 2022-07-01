@@ -2452,3 +2452,82 @@ function unusualFive() {
 
 //---------------------------------------------
 
+var uniqueInOrder=function(iterable){
+  let arr = []
+  for(let i = 0; i < iterable.length; i++){
+    if(iterable[i] === iterable[i+1]) continue
+    else arr.push(iterable[i])
+  }
+  return arr
+}
+
+function countZeros(n) {
+  let zero = 0
+  let str = ''
+  for(let i = 1; i <= n; i++){
+    str = '' + i
+    for(let b = 0; b <= str.length; b++){
+      if(str[b] === '0') zero++
+    }
+  }
+  return zero
+}
+
+function getSumOfDigits(integer) {
+  let sum = 0;
+  let digits =  String(Math.floor(integer));
+  for(let i = 0; i < digits.length; i++) {
+    sum += +digits[i]
+  }
+  console.log(integer, sum, digits)
+  return sum;
+}
+
+function lowercaseCount(str){
+  let result = 0;
+  let arr = ['q','w',"e",'r','t','y',"u",'i','o','p','a','s','d','f','g','h','j',"k","l",'z','x','c','v','b',"n","m"]
+  for(let i = 0; i < arr.length; i++){
+    for(let b = 0; b < str.length; b++){
+      if(arr[i] === str[b]) result++
+    }
+  }
+  return result
+}
+
+function doubleChar(str) {
+  let str2 = ''
+  for(let i = 0; i < str.length; i++){
+    str2 += str[i] + str[i]
+  }
+  return str2
+}
+
+function removeChar(str){
+ return str.slice(1, -1) 
+};
+
+function tripleTrouble(one, two, three){
+  let str = ''
+  for(let i = 0; i < one.length; i++){
+    str += one[i] + two[i] + three[i]
+  }
+  return str
+ }
+
+ function noSpace(x){
+  let str = ''
+  for(let i = 0; i < x.length; i++){
+    if(x[i] !== ' ') str += x[i]
+  }
+  return str
+}
+
+function spacify(str) {
+  let result = ''
+  for(let i = 0; i < str.length; i++){
+    result += str[i] + ' '
+  }
+  return result.slice(0, -1)
+}
+
+//----------------------------------------------------
