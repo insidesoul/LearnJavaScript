@@ -2410,3 +2410,45 @@ var countSheep = function (num){
 
 //-----------------------------------------------------------
 
+function solution(a, b){
+  let ab = ''
+  let ba = ''
+  if(a.length > b.length){
+    ab = a
+    ba = b
+  } else {
+    ab = b
+    ba = a
+  }
+  return ba +ab + ba
+}
+
+function getChar(c){
+  return String.fromCodePoint(c)
+}
+
+function correctTail(body, tail){
+  let sub = body[body.length-1]
+  if (sub === tail)
+    return true
+  else 
+    return false
+}  
+
+function catMouse(x){
+ return x.length > 5 ? 'Escaped!' : 'Caught!' 
+}
+
+function digits(n) {
+  console.log(n)
+  n = '' + n
+  return n.length
+}
+
+function unusualFive() {
+  let a = 'gfgfg'
+  return a.length
+}
+
+//---------------------------------------------
+
