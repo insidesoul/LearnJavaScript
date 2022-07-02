@@ -2649,3 +2649,41 @@ function capitalizeWord(word) {
 }
 
 //------------------------------------------------------
+
+function fiveLine(s){
+  s = s.trim()
+  let str = ''
+  for(let i = 0; i < 4; i++){
+    str += s + '\n'
+    for(let b = 0; b <= i; b++){
+      str += s
+    }
+  }
+  console.log(s)
+  return str+s
+}
+
+//----------------------------------------------------
+
+function timeConvert(num) {
+  if(num < 1) return '00:00'
+  let minutes = num % 60
+  let hours = 0
+  if(num > 59) hours = Math.floor(num / 60)
+  if(hours < 10) hours = '0'+ hours
+  if(minutes < 10) minutes = '0'+ minutes
+  return `${hours}:${minutes}`
+}
+
+function add(num1, num2) {
+ num1 = ('' + num1).split('').reverse()
+  num2 = ('' + num2).split('').reverse()
+  let max = Math.max(num1.length, num2.length)
+  let str = [];
+  for(let i = 0; i < max; i++)
+    str.push((parseInt(num1[i]) || 0) + (parseInt(num2[i]) || 0))
+  num1 = str.reverse().join('');
+  return parseInt(num1);
+}
+
+//------------------------------------------------
