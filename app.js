@@ -2687,3 +2687,153 @@ function add(num1, num2) {
 }
 
 //------------------------------------------------
+
+function spam(number){
+  let hue = 'hue'
+  return  hue.repeat(number)
+}
+
+var repeatIt = function(str, n) {
+  console.log(str)
+  if(typeof(str) !== 'string') return 'Not a string'
+  return str.repeat(n)
+}
+
+function stringy(size) {
+  return ''.padEnd(size, '10')
+}
+
+function sc(floor){
+  let str = "Aa~ "
+  if(floor < 2) return ''
+  if(floor < 7){
+    return str.repeat(floor - 1) + 'Pa! Aa!'
+  } else {
+      return str.repeat(floor-1, "Aa~ ") + 'Pa!'
+    }
+}
+
+function billboard(name, price = 30){
+  if(name === '') return 0
+  let a = `+${price}`.repeat(name.length)
+  a = eval(a)
+  return a
+} 
+
+function repeatStr (n, s) {
+  return s.repeat(n)
+}
+
+//---------------------------------------------------
+
+function vowel2index(str) {
+  let arr = ['a','e','i','o','u']
+  let result = ''
+  for(let i = 0; i < str.length; i++){
+    for(let b = 0; b < arr.length; b++){
+      if(str[i].toLowerCase() === arr[b]) result += i+1
+    }
+    if(result[result.length-1] === `${(i+1)%10}`) continue
+    else result += str[i]
+  }
+  return result
+}
+
+function letterCheck(arr) {
+  let result = 0
+  let oneSt = arr[0].toLowerCase()
+  let twoSt = arr[1].toLowerCase()
+    for(let b = 0; b < twoSt.length; b++){
+      if(oneSt.includes(twoSt[b])) result++
+  }
+  return result === twoSt.length ? true : false
+}
+
+function calculate(string) {
+  let str = string.split(' ');
+  let res = [];
+  let operator = '';
+  for(let i = 0; i < str.length; i++){
+    if(isNaN(+(str[i])) == false){
+      res.push(str[i]);
+    } 
+    if(str[i] == 'loses'){operator = '-'};
+    if(str[i] == 'gains'){operator = '+'}
+   
+  }
+  console.log(operator)
+   return (operator == '-')? +res[0] - +res[1] : +res[0] + +res[1];
+}
+
+function sabb(s, val, happiness){
+ let letters = 0
+ let sab = 'sabticl'
+ for(let i = 0; i < s.length; i++){
+   for(let b = 0; b < sab.length; b++){
+     if(s[i].includes(sab[b])){
+      letters++
+      break
+     }
+   }
+ }
+  return 22 < (letters + val + happiness) ? 'Sabbatical! Boom!' : 'Back to your desk, boy.'
+}
+
+function dontGiveMeFive(start, end){
+  let arr = []
+  for(let i = start; i <= end; i++){
+    arr.push(i)
+  }
+  let result = 0;
+  for(let b = 0; b < arr.length; b++){
+    if(String(arr[b]).includes(5)) result++
+  }
+  console.log(start,end,arr,result)
+  return arr.length - result
+}
+
+var mispelled = function(word1, word2){
+  let result = 0;
+  for(let i = 0; i < word1.length; i++){
+    for(let b = 0; b < word2.length; b++){
+      if((word1[i]).includes(word2[b])) {
+        result++ 
+        break
+      }
+    }
+  }
+  if(Math.abs(word1.length - word2.length) >= 2) return false
+  return (word1.length === result || word1.length === result-1 || word1.length === result+1)&& word2.length <= result+1? true : false
+}
+
+function spEng(sentence){
+  return sentence.toLowerCase().includes('english')
+}
+
+//------------------------------------------------------------
+
+function tripleX(str){
+  let firstX = str.indexOf('x') 
+  console.log(str, firstX)
+if(str.indexOf('x', firstX+1) === firstX + 1)  return true
+  else return false
+}
+
+function abbrevName(name){
+  return `${name[0].toUpperCase()}.${name[name.indexOf(' ')+1].toUpperCase()}`
+}
+
+function position(letter){
+  let str = '0abcdefghijklmnopqrstuvwxyz'
+  return`Position of alphabet: ${str.indexOf(letter)}`
+}
+
+function wordsToMarks(string){
+  let sum = 0;
+  for(let i = 0; i < string.length; i++){
+    sum += string[i].charCodeAt() - 96
+  }
+  return sum
+}
+
+//--------------------------------------------------------
