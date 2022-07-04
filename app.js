@@ -2837,3 +2837,18 @@ function wordsToMarks(string){
 }
 
 //--------------------------------------------------------
+
+function firstToLast(str,c){
+  console.log(str, c)
+  if(str.lastIndexOf(c) === -1) return -1
+  return (str.lastIndexOf(c) === str.indexOf(c)) ? 0 : str.lastIndexOf(c) - str.indexOf(c)
+}
+
+//----------------------------------------------------------
+
+function validateCode (code) {
+  code += ''
+  return code.startsWith('1') || code.startsWith('2') || code.startsWith('3')
+}
+
+//-----------------------------------------------------------
