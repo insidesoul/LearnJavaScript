@@ -2852,3 +2852,247 @@ function validateCode (code) {
 }
 
 //-----------------------------------------------------------
+
+function solution(str, ending){
+  return str.endsWith(ending)
+}
+
+function searchNames( logins ){
+  let log = 0;
+  let index = 0;
+  let result = []
+ for(let i = 0; i < logins.length; i++){
+  log = logins[i].filter(el => el.endsWith('_'))
+   if(logins[i][0].endsWith('_')) result.push(logins[i]) 
+ }
+  return result
+ console.log(log, index)
+}
+
+function automorphic(n){
+  return String(Math.pow(n,2)).endsWith(String(n)) ? 'Automorphic' : 'Not!!'
+}
+
+//------------------------------------------------------------
+
+function solution(digits){
+  let result = digits.slice(0, 5)
+  for(let i = 1; i < digits.length - 4; i++){
+    if(result < digits.slice(i, i+5)) result = digits.slice(i, i+5)
+  }
+  return Number(result)
+}
+
+const createPhoneNumber = n => {
+  n = n.join('')
+  return `(${n.slice(0,3)}) ${n.slice(3,6)}-${n.slice(6)}`
+}
+
+const greet = function(name) {
+return `Hello ${name[0].toUpperCase() + name.toLowerCase().slice(1)}!`
+};
+
+function maskify(cc) {
+  return cc.slice(-4).padStart(cc.length, '#')
+}
+
+function trim(str, size) {
+  console.log(str,size)
+  return size >= str.length ? str : size > str.length ? str : str.length < 4 ? str.slice(0, size) +  '...' : str.slice(0,size-3) + '...'
+}
+
+function shortenToDate(longDate) {
+  return longDate.slice(0, longDate.indexOf(','))
+}
+
+function rotate(str){
+  console.log(str)
+  if(str === ' ') return [' ']
+  let arr = [str]
+  for(let i = 0; i < str.length; i++){
+    arr.push(arr[i].slice(1)+arr[i][0])
+  }
+  arr.shift()
+  return arr
+}
+
+function tailSwap(arr) {
+  let one = arr[0].indexOf(':')
+  let two = arr[1].indexOf(':')
+  return [`${arr[0].slice(0,one)}${arr[1].slice(two)}`, `${arr[1].slice(0,two)}${arr[0].slice(one)}`]
+}
+
+function scrollingText(text){
+  if(text === ' ') return [' ']
+  let arr = [text]
+  for(let i = 0; i < text.length; i++){
+    arr.push(arr[i].slice(1)+arr[i][0])
+  }
+  arr.pop()
+  return arr.map(el => el.toUpperCase())
+}
+
+function polydivisible(x) {
+  return Math.floor(x / String(x).length) === (x / String(x).length) 
+}
+
+//------------------------------------------------
+
+function shortcut (string) {
+  return string.replace(/[aeiou]/g, '')
+}
+
+function DNAStrand(dna){
+  function repl (s) {
+    switch(s){
+        case 'A': return 'T'
+        case 'T': return 'A' 
+        case 'C': return 'G'
+        case 'G': return 'C'
+    }
+  }
+  return dna.replace(/[ATCG]/g, repl)
+}
+
+function DNAtoRNA(dna){
+  function repl (s) {
+    switch(s){
+        case 'T': return 'U'
+        case 'U': return 'T' 
+    }
+  }
+  return dna.replace(/[TU]/g, repl)
+}
+
+function removeRotten(bagOfFruits){
+  if(!!bagOfFruits && bagOfFruits.length === 0 || !Array.isArray(bagOfFruits))return []
+  return bagOfFruits.join(',').replace(/rotten/g, '').split(',').map(el => el.toLowerCase())
+}
+
+function correct(string){
+  function symbol (k){
+    switch(k){
+        case '5': return 'S'
+        case '0': return 'O'
+        case '1': return 'I'
+    }
+  }
+  console.log(string)
+  return string.replace(/[501]/g, symbol)
+}
+
+function getNumberFromString(s) {
+  return +s.replace(/[^+\d]/g, '')
+}
+
+function correctPolishLetters (string) {
+  function symbol(s){
+    switch(s){
+    case 'ą' : return 'a'
+    case 'ć' : return 'c'
+    case 'ę' : return 'e'
+    case 'ł' : return 'l'
+    case 'ń' : return 'n'
+    case 'ó' : return 'o'
+    case 'ś' : return 's'
+    case 'ź' : return 'z'
+    case 'ż' : return 'z'
+    }
+  }
+  return string.replace(/[ąćęłńóśźż]/g, symbol)
+}
+
+function fakeBin(x){
+  x = x.replace(/[0-4]/g, '0')
+  return x.replace(/[5-9]/g, '1')
+}
+
+function remove (string) {  
+  string = string.split('')
+  for(let i = 0; i < string.length; i++){
+    if(string[string.length-1] === '!'){
+      string.pop()
+    }
+  }
+  console.log(string[string.legnth-1] === '!')
+  return string.join('')
+}
+
+var removeVowels = function(str){
+  return str.replace(/[aeioou]/g, '')
+}
+
+var replaceDots = function(str) {
+  return str.replace(/[.]/g, '-');
+}
+
+function contamination(text, char){
+  return text.replace(/./g, char)
+}
+
+//------------------------------------------------------
+
+function reverseWords(str){
+  let result = []
+  str = str.split(' ')
+  for(let i = str.length-1; i >= 0; i--){
+    result.push(str[i])
+  }
+  return result.join(' ')
+}
+
+var isAnagram = function(test, orig) {
+  var test = test.toLowerCase().split('').sort().join('');
+  var orig = orig.toLowerCase().split('').sort().join('');
+
+  return test == orig;
+}
+
+function descendingOrder(n){
+  return +((n+'').split('').sort((a,b) => b-a).join(''))
+}
+
+function highAndLow(numbers){
+  numbers = numbers.split(' ').map(el => +el)
+  return `${Math.max(...numbers)} ${Math.min(...numbers)}`
+}
+
+function nameShuffler(str){
+  return str.split(' ').reverse().join(' ')
+}
+
+function addLength(str) {
+  str = str.split(' ')
+  for(let i = 0; i < str.length; i++){
+     str[i] += ' ' + str[i].length
+  }
+  return str
+}
+
+function validatePIN (pin) {
+  if(pin.length !== 4 && pin.length-2 !== 4) return false
+  return pin = pin.split('').every(el => +el >= 0 && el !== '\n')
+}
+
+var palindromeChainLength = function(n) {
+ let notIsPalindrome = true, index = 0, value=n;
+ while(notIsPalindrome){
+   let reversed = Number.parseInt(value.toString().split('').reverse().join(''));
+   if(value == reversed){
+     notIsPalindrome = false;
+   }else{
+     index++;
+     value += reversed;
+   }
+ }
+ return index;
+}
+
+function makeString(s){
+  s = s.split(' ')
+  let result = ''
+  for(let i = 0; i < s.length; i++){
+    result += s[i][0]
+  }
+  return result
+}
