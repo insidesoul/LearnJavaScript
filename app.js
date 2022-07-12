@@ -3365,3 +3365,140 @@ function countWins(winnerList, country) {
 }
 
 //-----------------------------------------------------
+
+function getMax1(){
+  var max = {
+   name: 'Max Headroom'
+  }
+  return max;
+}
+
+function getMax2(){
+  return { 
+    name: 'Max Headroom'
+  }
+}
+
+//---------------------------------------------------
+
+var makeBackronym = function(string){
+  string = string.toUpperCase()
+  let result = ''
+  for(let i = 0; i < string.length; i++){
+    result += dict[string[i]] + ' '
+  }
+  return result.slice(0, -1)
+}
+
+function arithmetic(a, b, operator){
+  const operat = {
+    add : a+b,
+    subtract: a-b,
+    multiply: a*b,
+    divide: a/b,
+  }
+  return operat[operator]
+}
+
+function sumPPG(playerOne, playerTwo){
+  console.log(playerOne, playerTwo)
+  let sum = playerOne.ppg + playerTwo.ppg
+  return sum
+}
+
+function checkThreeAndTwo(array) {
+  let same = {
+    a : 0,
+    b : 0,
+    c : 0,
+  }
+  for(let i = 0; i < array.length; i++){
+    same[array[i]]++
+  }
+  console.log(array, same)
+  if(same.a === 3 || same.b === 3 || same.c === 3){
+    if(same.a === 2 || same.b === 2 || same.c === 2){
+      return true
+    }
+  }
+  return false
+}
+
+//-------------------------------------------------------------
+
+function createDict(keys, values){
+  let obj = {}
+  for(let i = 0; i < keys.length; i++){
+    if(values.length < keys.length){
+      values.push(null)
+    }
+    obj[keys[i]] = values[i]
+  }
+  return obj
+}
+
+function countDevelopers(list) {
+  let result = 0;
+  for(let i = 0; i < list.length; i++){
+    if(list[i].continent === 'Europe' && list[i].language === 'JavaScript') result++
+  }
+  return result
+}
+
+function greetDevelopers(list) {
+  for(let i = 0; i < list.length; i++){
+    list[i].greeting = `Hi ${list[i].firstName}, what do you like the most about ${list[i].language}?`
+  }
+  return list
+}
+
+function testResult(array) {
+  let result = []
+  let average = 0
+  let dict = {
+    h : 0,
+    a : 0,
+    l : 0,
+  }
+  for(let i = 0; i < array.length; i++){
+    average += array[i]
+    if(array[i] < 7) dict.l++
+    else if(array[i] < 9) dict.a++
+    else dict.h++
+  }
+  average = (average/array.length).toFixed(3)
+  result.push(+average, dict)
+  if(dict.a === 0 && dict.l === 0) result.push('They did well')
+  return result
+}
+
+function count(array){
+let obj = {}
+for(let i = 0; i < array.length; i++){
+  if(obj[array[i]] !== undefined) obj[array[i]] += 1
+  else obj[array[i]] = 1
+}
+console.log(array, obj)
+  return obj
+}
+
+function numObj(s){
+  let arr = []
+  for(let i = 0; i < s.length; i++){
+    let obj = {}
+    obj[`${s[i]}`] = String.fromCharCode(s[i])
+  arr.push(obj)
+  }
+  return arr
+}
+
+function countLanguages(list) {
+  let obj = {}
+  for(let i = 0; i < list.length; i++){
+    if(obj[list[i].language] === undefined) obj[list[i].language] = 1
+    else obj[list[i].language] += 1
+  }
+  return obj
+}
+
+//----------------------------------------------
