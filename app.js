@@ -3096,3 +3096,272 @@ function makeString(s){
   }
   return result
 }
+
+function isMatching(string, str1, str2) {
+  string = string.toLowerCase().replace(/\s+/g, '').split('').sort().join('')
+  str2 = (str2+str1).toLowerCase().replace(/\s+/g, '').split('').sort().join('')
+  return string == str2
+}
+
+function findLongest(str) {
+  let spl = str.split(" ")
+  let longest = 0
+  for(let i = 0; i < spl.length; i++){
+    if(spl[i].length > longest){
+      longest = spl[i].length
+    }
+  }
+    return longest
+}
+
+function initializeNames(name){
+  name = name.split(' ')
+  if(name.length < 3) return name.join(' ')
+  let result = '' +  name[0] + ' '
+  for(let i = 1; i < name.length-1; i++){
+    result += name[i][0] + '. '
+  }
+  return result + name[name.length-1]
+}
+
+function reverse(string){
+  return string.split(' ').reverse().join(' ')
+}
+
+function stringToArray(string){
+  return string.split(' ')
+}
+
+function product (string) {
+let exclam = 0
+let quest = 0
+for(let i = 0; i < string.length; i++){
+  if(string[i] === '!') exclam++
+  if(string[i] === '?') quest++
+}
+  return exclam * quest
+}
+
+function determineTime (durations) {
+  console.log(durations)
+  if(durations.length === 0) return true
+  let hours = 0;
+  let minutes = 0;
+  let seconds = 0;
+  for(let i = 0; i < durations.length; i++){
+    hours += +(durations[i][0] + durations[i][1])
+    minutes += +(durations[i][3] + durations[i][4])
+    seconds += +(durations[i][6] + durations[i][7])
+  }
+  hours = hours + (seconds/60 + minutes)/60
+  console.log(hours, minutes, seconds,)
+  return hours <= 24 ? true : false
+}
+
+function interweave(s1, s2) {
+  let s = '', l = Math.max(s1.length, s2.length);
+  for(let i = 0; i < l; i++) {
+    if(s1[i]) s += s1[i];
+    if(s2[i]) s += s2[i];
+  }
+  return s.replace(/\d/g,'').trim();
+}
+
+function reverseBits (n) {
+  n = n.toString(2).split('').reverse().join('')
+  console.log(n)
+  return parseInt(n, 2)
+}
+
+function totalBill(str) {
+  let sum = 0
+  for(let i = 0; i < str.length; i++){
+    if(str[i] === 'r') sum++
+  }
+  sum -= Math.floor(sum / 5)
+  return sum*2
+}
+
+function tidyNumber(n){
+  n+=''
+  console.log(n)
+  for(let i = 0; i < n.length-1; i++){
+    if(+(n[i]) <= +(n[i+1])) continue
+    else return false
+   }
+  return true
+}
+
+function solve(eq){
+  return eq.split(/([*\+\-\/])/).reverse().join('');
+}
+
+function hydrate(s) {
+  let sum = 0
+  for(let i = 0; i < s.length; i++){
+    if(typeof(+s[i]) === 'number' && !isNaN(+s[i])) sum += +s[i]
+  }
+  return sum > 1 ? sum + ' glasses of water' : sum + ' glass of water'
+}
+
+const removeConsecutiveDuplicates = s => {
+  let result = ''
+  s = s.split(' ')
+  for(let i = 0; i < s.length; i++){
+      if(s[i] !== s[i+1]) result += s[i] + ' '
+  }
+  return result.slice(0,-1)
+}
+
+function digits(num){
+  let result = []
+  num = String(num).split('').map(el => +el)
+  for(let i = 0; i < num.length; i++){
+    for(let b = i+1; b < num.length; b++){
+      result.push(num[i] + num[b])
+    }
+  }
+  return result
+}
+
+function fix(paragraph){
+  if(!paragraph) return ''
+  paragraph = paragraph.split('. ')
+  for(let i = 0; i < paragraph.length; i++){
+    paragraph[i] = paragraph[i].slice(0,1).toUpperCase() + paragraph[i].slice(1)
+  }
+  return paragraph.join('. ')
+}
+
+function duplicateSandwich(a) {
+  let start = 0;
+  let end = 0;
+  for(let i = 0; i < a.length; i++){
+    if(a.indexOf(a[i]) !== a.lastIndexOf(a[i])){
+      start = a.indexOf(a[i])
+      end = a.lastIndexOf(a[i])
+    }
+  }
+  let result = []
+  for(let i = start+1; i < end; i++){
+    result.push(a[i])
+  }
+  console.log(a,start,end,result)
+  return typeof(a) === 'string' ? result.join('') : result
+}
+
+//---------------------------------------------------------
+
+function wrap(value) {
+  return { value: value }
+}
+
+var rooms = {
+  first : {
+    name : "firstRoom",
+    description : "play",
+    completed : true,
+  },
+  second : {
+    name : "secondRoom",
+    description : "sport",
+    completed : true,
+  },
+  third : {
+    name : "thirdRoom",
+    description : "relax",
+    completed : false,
+  },
+}
+
+var rooms = {
+  first: {
+    description: 'This is the first room',
+    items: {
+      chair: 'The old chair looks comfortable',
+      lamp: 'This lamp looks ancient',
+    },
+  },
+  second: {
+    description: 'This is the second room',
+    items: {
+      couch: 'This couch looks like it would hurt your back',
+      table: 'On the table there is an unopened bottle of water',
+    },
+  }
+}
+
+function giveMeFive(obj){
+  let arr = []
+  for(let key in obj){
+    if(key.length === 5) arr.push(key)
+    if(obj[key].length === 5 ){
+      arr.push(obj[key])
+    }
+  }
+  return arr
+}
+
+function greet(language) {
+  let languageList = {
+    english: 'Welcome',
+    czech: 'Vitejte',
+    danish: 'Velkomst',
+    dutch: 'Welkom',
+    estonian: 'Tere tulemast',
+    finnish: 'Tervetuloa',
+    flemish: 'Welgekomen',
+    french: 'Bienvenue',
+    german: 'Willkommen',
+    irish: 'Failte',
+    italian: 'Benvenuto',
+    latvian: 'Gaidits',
+    lithuanian: 'Laukiamas',
+    polish: 'Witamy',
+    spanish: 'Bienvenido',
+    swedish: 'Valkommen',
+    welsh: 'Croeso'
+  }
+  for(let key in languageList){
+    if(key === language) return languageList[key]
+  }
+  return 'Welcome'
+}
+
+function iTri(s){
+  let sum = 2.4+112+26.2
+  let swim = 2.4, bike = 112, run = 26.2
+  console.log(s, sum)
+  if(s >= sum) return 'You\'re done! Stop running!'
+  return s <= 0 ? 'Starting Line... Good Luck!' : s <= 2.4 ? {'Swim':`${(sum - s).toFixed(2)} to go!`} : s <= 112 ? {'Bike':`${(sum-s).toFixed(2)} to go!`} : (sum - s) < 10 ? { Run: 'Nearly there!' } : {'Run':`${(sum-s).toFixed(2)} to go!`}
+}
+
+function duckDuckGoose(players, goose) {
+  let size = players.length ;
+    while (goose > size) {
+      goose = goose - size;
+    } 
+    return players[goose-1].name;
+  }
+
+function redarr(arr) {
+  let resultArr = []
+  let arr_1 = [...new Set(arr)].sort()
+  for(let i = 0; i < arr_1.length; i++){
+    resultArr.push(i+'')
+    resultArr.push(arr_1[i])
+  }
+  return Object.assign({}, arr_1)
+}
+
+//-------------------------------------------------
+
+function type(value) {
+ return ({}.toString.call(value)).split(' ')[1].toLowerCase().slice(0, -1)
+}
+
+function countWins(winnerList, country) {
+  return winnerList.filter(x => country === x['country']).length
+}
+
+//-----------------------------------------------------
