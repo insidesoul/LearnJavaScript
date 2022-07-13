@@ -3502,3 +3502,215 @@ function countLanguages(list) {
 }
 
 //----------------------------------------------
+
+function nameScore(name){
+  console.log(name, alpha)
+  let name2 = name.toUpperCase().replace(/\s/g, '')
+  let sum = 0
+  for(let i = 0; i < name2.length; i++){
+    for(let key in alpha){
+      if(key.includes(name2[i])) sum+= alpha[key] 
+    }
+  }
+  let  obj = {}
+  obj[name] = sum
+  return obj
+}
+
+function outed(meet, boss){
+  let sum = meet[boss]
+  for(let key in meet){
+    sum += meet[key]
+  }
+  sum = sum/11
+  return sum <= 5 ? 'Get Out Now!' : 'Nice Work Champ!'
+}
+
+function permuteAPalindrome (input) { 
+  let obj = {}
+  for (let el of input){
+    if (obj[el] === undefined)
+      obj[el] = 1;
+    else
+      obj[el]++;
+  }
+  
+  let countOdd = 0;
+  for (let key in obj){
+    if (obj[key]%2 !== 0)
+      countOdd++;
+  }
+  return (countOdd<=1);
+}
+
+function daysRepresented(trips){
+  let days = [];
+  for ( let i = 0; i < trips.length; i++){
+    for (let k = trips[i][0]; k <= trips[i][1]; k++){
+      if (!days.includes(k)){
+        days.push(k);
+        console.log(days)
+      }
+    }
+  }
+  return days.length;
+}
+
+function f(x, cc) { 
+  const obj = {
+    a : 'b',
+    b : 'c',
+    c : 'a',
+  }
+  let abc = 0
+  console.log(x,cc)
+  for(let key in cc){
+    if(cc[key] === x) abc = obj[key] 
+    console.log(abc)
+  }
+  for(let key in cc){
+    if(abc == key) return cc[key]
+  }
+}
+
+function solve(st) {
+ let obj = {}
+ for(let i = 0; i < st.length; i++){
+   if(obj[st[i]] === undefined) obj[st[i]] = st.lastIndexOf(st[i]) - st.indexOf(st[i])
+ }
+let max = -1
+let result = ''
+  for(let key in obj){
+    if(obj[key] > max){
+      max = obj[key]
+      result = key
+    }
+  }
+  let arr = []
+  for(let key in obj){
+    if(obj[key] === max) arr.push(key)
+  }
+  arr = arr.sort()
+  return arr[0]
+}
+
+//--------------------------------------------------
+
+function boredom(staff){
+  console.log(staff)  
+  const obj = {
+    accounts : 1,
+    finance : 2,
+    canteen : 10,
+    regulation : 3,
+    trading : 6,
+    change : 6,
+    IS : 8,
+    retail : 5,
+    cleaning : 4,
+    'pissing about' : 25,
+  }
+  let sum = 0;
+  for(let key in staff){
+    for(let key2 in obj){
+      if(staff[key] === key2) sum += obj[key2]
+    }
+  }
+  return sum <= 80 ? 'kill me now' : sum < 100 ? 'i can handle this' : 'party time!!'
+}
+
+function numberOfPairs(gloves){
+  let obj = {}
+  let gloves2 = gloves.filter((el,i) => gloves.indexOf(el) === gloves.lastIndexOf(el))
+  for(let i = 0; i < gloves.length; i++){
+      if(obj[gloves[i]] === undefined) obj[gloves[i]] = 1
+      else obj[gloves[i]]++
+  }
+  let count = 0
+  for(let key in obj){
+    count += Math.floor(obj[key] / 2) 
+  }
+  return count
+}
+
+function replaceCommon(string, letter) {
+ let obj = {}
+ let string1 = string.replace(/\s/g, '')
+ for(let i = 0; i < string1.length; i++){
+   if(obj[string1[i]] === undefined) obj[string1[i]] = 1
+   else obj[string1[i]]++
+ }
+let max = -1
+let result = ''
+  for(let key in obj){
+    if(obj[key] > max){
+      max = obj[key]
+      result = key
+    }
+  }
+  let arr = []
+  for(let key in obj){
+    if(obj[key] === max) arr.push(key)
+  }
+  console.log(string, letter, obj, arr)
+  string = string.split('')
+  for(let i = 0; i < string.length; i++){
+    if(string[i] === arr[0]) string[i] = letter
+  }
+  console.log(string)
+  return string.join('')
+}
+
+function sentence(list) {
+  let result = ''
+  let obj = {}
+  for(let i = 0; i < list.length; i++){
+    obj = Object.assign(obj, list[i])
+  }
+  let arr = []
+  for(let key in obj){
+    if(key !== Math.abs(key)+'') arr.push(key) 
+  }
+  arr = arr.map(el => Math.abs(+el)).sort((a,b) => b-a).map(el => '-' + el)
+  let arr2 = []
+  for(let key in obj){
+    if(key === Math.abs(key)+'') arr2.push(key) 
+  }
+  arr = arr.concat(arr2)
+  for(let i = 0; i<arr.length; i++){
+    result += obj[arr[i]] + ' '
+  }
+  return result.slice(0,-1)
+}
+
+function myLanguages(results) {
+console.log(results)
+  let result = []
+  for(let key in results){
+    if(results[key] >= 60) result.push(results[key])
+  }
+  let res = []
+  result = result.sort((a,b) => b-a)
+  for(let i = 0; i < result.length; i++){
+    for(let key in results){
+      if(results[key]===result[i]) res.push(key)
+    }
+  }
+  return res
+}
+
+function getStrings(city){
+   let obj = {}
+   let string1 = city.replace(/\s/g, '').toLowerCase()
+   for(let i = 0; i < string1.length; i++){
+     if(obj[string1[i]] === undefined) obj[string1[i]] = '*'
+     else obj[string1[i]] += '*'
+   }
+  let str = ''
+  for(let key in obj){
+    str += key+':'+obj[key]+','
+  }
+  return str.slice(0,-1)
+}
+
+//--------------------------------------------------
