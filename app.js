@@ -3714,3 +3714,109 @@ function getStrings(city){
 }
 
 //--------------------------------------------------
+
+function Counter() {
+  this.value = 0;
+}
+Counter.prototype.increase = function() {
+  this.value++;
+};
+Counter.prototype.getValue = function() {
+  return this.value;
+};
+Counter.prototype.reset = function() {
+  this.value = 0;
+};
+
+String.prototype.toJadenCase = function () {
+  return this.split(' ').map(el => el[0].toUpperCase()+el.slice(1)).join(' ')
+};
+
+Array.prototype.reverse = function() {
+  let del = this.length
+  for(let i = del-1; i > -1; i--){
+    this.push(this[i])
+  }
+  for(let i = 0; i < del; i++){
+    this.shift()
+  }
+  return this
+};
+
+let Ball = function(ballType) {
+  return this.ballType = ballType ? ballType : 'regular'
+};
+
+//--------------------------------------------
+
+function Vovan(name, age) {
+  this.name = name
+  this.age = age
+  this.seyHi = function(){return 'Hello'}
+}
+  
+let obj1 = new Vovan('vova', 20)
+console.log(obj1)
+
+let obj2 = new Vovan('vlad', 21)
+console.log(obj2)
+
+//--------------------------------------------
+
+var Ghost = function() {
+  let arr = ['white', "yellow", "purple", "red"]
+  this.color = arr[Math.floor(Math.random() * 4)]
+};
+
+let obj1 = new Ghost()
+let obj2 = new Ghost()
+console.log(obj1)
+console.log(obj2)
+
+function NameMe(first, last) {
+    this.firstName = first;
+    this.lastName = last;
+    this.name = this.firstName + ' ' + this.lastName;
+}
+
+String.prototype.digit = function() {
+  console.log(this)
+  return this.length === 1 && '0' <= this && this <= '9';
+};
+
+String.prototype.isUpperCase = function() {
+  console.log(this)
+  return this.toUpperCase() == this 
+}
+
+String.prototype.toAlternatingCase = function () {
+  return this.split('').map(el => el.toUpperCase() == el ? el.toLowerCase() : el.toUpperCase()).join('')
+}
+
+Array.prototype.only = function(keys){
+  console.log(this,keys)
+  keys.sort((a,b) => a-b)
+  let arr = []
+  for(let i = 0; i < keys.length; i++){
+    arr.push(this[keys[i]])
+  }
+  return arr
+}
+
+String.prototype.camelCase=function(){
+  console.log(this === undefined, this)
+  if(!this || !this || 0 === this.length) return ''
+  else if(this[0] === ' ') return this.slice(1).split(' ').map(el => el[0].toUpperCase()+el.slice(1)).join('')
+  else if(this[this.length-1] === ' ') return this.slice(0,-1).split(' ').map(el => el[0].toUpperCase()+el.slice(1)).join('')
+  else return this.split(' ').map(el => el[0].toUpperCase()+el.slice(1)).join('')
+}
+
+class Dinglemouse{
+  constructor( firstName, lastName ){
+    this.firstName = firstName.concat(" ");
+    this.lastName = lastName;
+  }  
+  getFullName(){
+    return this.firstName.concat(this.lastName).trim();
+  }
+}
