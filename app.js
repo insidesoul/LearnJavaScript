@@ -3898,3 +3898,9 @@ function objectType(...obj) {
 }
 
 //-------------------------------------------------------
+
+function spread(func, args) {
+  return func.apply(spread, args) 
+}
+
+//-------------------------------------------------------
