@@ -4091,3 +4091,35 @@ function spread(func, args) {
 
 //------------------------------------------------------------
 
+Array.prototype.square  = function () { return this.map(function(n) { return n*n; }); }
+Array.prototype.cube    = function () { return this.map(function(n) { return n*n*n; }); }
+Array.prototype.average = function () { return this.sum() / this.length; }
+Array.prototype.sum     = function () { return this.reduce(function(a, b) { return a + b; }, 0); }
+Array.prototype.even    = function () { return this.filter(function(item) { return 0 == item % 2; }); }
+Array.prototype.odd     = function () { return this.filter(function(item) { return 0 != item % 2; }); }
+
+function Sleigh() {}
+Sleigh.prototype.authenticate = function(name, password) {
+  return name === 'Santa Claus' && password === 'Ho Ho Ho!'
+};
+
+String.prototype.reverse = function(){
+    return this.split('').reverse().join('')
+}
+
+Array.prototype.even = function(){
+  return this.filter(el => el % 2 === 0 && Number.isInteger(el))
+}
+Array.prototype.odd = function(){
+  return this.filter(el => el % 2 !== 0 && Number.isInteger(el))
+}
+Array.prototype.under = function(x){
+  return this.filter(el => el < x && Number.isInteger(el))
+}
+Array.prototype.over = function(x){
+  return this.filter(el => el > x && Number.isInteger(el))
+}
+Array.prototype.inRange = function(min,max){
+    return this.filter(el => (el > min-1 && el < max+1) && Number.isInteger(el))
+}
+
