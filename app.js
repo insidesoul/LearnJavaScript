@@ -4091,64 +4091,200 @@ function spread(func, args) {
 
 //------------------------------------------------------------
 
-Array.prototype.square  = function () { return this.map(function(n) { return n*n; }); }
-Array.prototype.cube    = function () { return this.map(function(n) { return n*n*n; }); }
-Array.prototype.average = function () { return this.sum() / this.length; }
-Array.prototype.sum     = function () { return this.reduce(function(a, b) { return a + b; }, 0); }
-Array.prototype.even    = function () { return this.filter(function(item) { return 0 == item % 2; }); }
-Array.prototype.odd     = function () { return this.filter(function(item) { return 0 != item % 2; }); }
+// Array.prototype.square  = function () { return this.map(function(n) { return n*n; }); }
+// Array.prototype.cube    = function () { return this.map(function(n) { return n*n*n; }); }
+// Array.prototype.average = function () { return this.sum() / this.length; }
+// Array.prototype.sum     = function () { return this.reduce(function(a, b) { return a + b; }, 0); }
+// Array.prototype.even    = function () { return this.filter(function(item) { return 0 == item % 2; }); }
+// Array.prototype.odd     = function () { return this.filter(function(item) { return 0 != item % 2; }); }
 
-function Sleigh() {}
-Sleigh.prototype.authenticate = function(name, password) {
-  return name === 'Santa Claus' && password === 'Ho Ho Ho!'
-};
+// function Sleigh() {}
+// Sleigh.prototype.authenticate = function(name, password) {
+//   return name === 'Santa Claus' && password === 'Ho Ho Ho!'
+// };
 
-String.prototype.reverse = function(){
-    return this.split('').reverse().join('')
-}
+// String.prototype.reverse = function(){
+//     return this.split('').reverse().join('')
+// }
 
-Array.prototype.even = function(){
-  return this.filter(el => el % 2 === 0 && Number.isInteger(el))
-}
-Array.prototype.odd = function(){
-  return this.filter(el => el % 2 !== 0 && Number.isInteger(el))
-}
-Array.prototype.under = function(x){
-  return this.filter(el => el < x && Number.isInteger(el))
-}
-Array.prototype.over = function(x){
-  return this.filter(el => el > x && Number.isInteger(el))
-}
-Array.prototype.inRange = function(min,max){
-    return this.filter(el => (el > min-1 && el < max+1) && Number.isInteger(el))
-}
+// Array.prototype.even = function(){
+//   return this.filter(el => el % 2 === 0 && Number.isInteger(el))
+// }
+// Array.prototype.odd = function(){
+//   return this.filter(el => el % 2 !== 0 && Number.isInteger(el))
+// }
+// Array.prototype.under = function(x){
+//   return this.filter(el => el < x && Number.isInteger(el))
+// }
+// Array.prototype.over = function(x){
+//   return this.filter(el => el > x && Number.isInteger(el))
+// }
+// Array.prototype.inRange = function(min,max){
+//     return this.filter(el => (el > min-1 && el < max+1) && Number.isInteger(el))
+// }
 
-Boolean.prototype.toString = function() {
-  return this + ''
-}
-Number.prototype.toString = function() {
-  return this + ''
-}
-Array.prototype.toString = function() {
-  return '['+this.join(',')+']'
-}
+// Boolean.prototype.toString = function() {
+//   return this + ''
+// }
+// Number.prototype.toString = function() {
+//   return this + ''
+// }
+// Array.prototype.toString = function() {
+//   return '['+this.join(',')+']'
+// }
 
-//--------------------------------------------------
+// //--------------------------------------------------
 
-// Для преобразования строки к целому числу используется метод Number.parseInt(string) или функция parseInt(string).
+// // Для преобразования строки к целому числу используется метод Number.parseInt(string) или функция parseInt(string).
 
-// Принципы их работы идентичны:
+// // Принципы их работы идентичны:
 
-// имеют два параметра: string и radix. Radix – основание системы счисления (число от 2 до 36), которое считается необязательным, но на практике лучше всегда его указывать;
-// пробелы в начале и конце строки не учитываются;
-// если значение, переданное в строку не является string, то неявно преобразовывается;
-// возвращаемое значение – целое число или NaN, если первый символ строки не удалось преобразовать в число.
-// console.log(parseInt('56.5ab', 10)); // 56
-// console.log(parseInt('     5abc   ', 16)); // 23228
-// console.log(parseInt(56.15, 10)); // 56
-// console.log(Number.parseInt('-56.15', 10)); // -56
-// console.log(Number.parseInt(100, 2)); // 4 
-// console.log(Number.parseInt('$56abc', 16)); // NaN
-// console.log(parseInt('abc5.6')); // NaN
+// // имеют два параметра: string и radix. Radix – основание системы счисления (число от 2 до 36), которое считается необязательным, но на практике лучше всегда его указывать;
+// // пробелы в начале и конце строки не учитываются;
+// // если значение, переданное в строку не является string, то неявно преобразовывается;
+// // возвращаемое значение – целое число или NaN, если первый символ строки не удалось преобразовать в число.
+// // console.log(parseInt('56.5ab', 10)); // 56
+// // console.log(parseInt('     5abc   ', 16)); // 23228
+// // console.log(parseInt(56.15, 10)); // 56
+// // console.log(Number.parseInt('-56.15', 10)); // -56
+// // console.log(Number.parseInt(100, 2)); // 4 
+// // console.log(Number.parseInt('$56abc', 16)); // NaN
+// // console.log(parseInt('abc5.6')); // NaN
 
-//--------------------------------------------------
+// //--------------------------------------------------
+
+// Объект - это некая сущность, которая имеет свои характеристики, а также может совершать действия. Характеристики объекта мы уже рассматривали ранее - это его свойства. А вот действия, которые может совершать объект - это методы (или свойства-функции) объекта, и в JavaScript они представлены функциями.
+
+// // создадим объект order
+// const order = {
+//   orderDate: '10.01.2018',
+//   deliveryDate: '15.01.2018',
+// };
+
+// // используем функциональное выражение, чтобы создать функцию и присваиваем ее свойству order.isDelivered
+// order.isDelivered = function (){ 
+//     console.log('Yes!')
+//   };
+
+// // вызываем функцию
+// order.isDelivered(); // "Yes!"
+// Существует разный синтаксис для создания и записи методов объекта:
+
+// Функциональное выражение (как в примере выше). Сначала создаем объект, затем создаем функцию через функциональное выражение и присваиваем ее свойству объекта:
+// // создаем объект
+// const obj = {
+//   name: 'Alice',
+// };
+// // присваиваем функцию в свойство объекта
+// obj.sing = function() {
+//   console.log('I can sing!')
+// };
+// // вызываем функцию
+// obj.sing(); // "I can sing!"
+// Объявление функции перед добавлением ее в свойство объекта. Сначала объявляем функцию, затем создаем объект (или наоборот, здесь порядок не важен), затем добавляем функцию в качестве метода:
+// // создаем объект
+// const obj = {
+//   name: 'Alice',
+// };
+// // объявляем функцию sing
+// function sing() {
+//   console.log('I can sing!')
+// };
+// // присваиваем функцию в свойство объекта
+// obj.sing = sing;
+// // вызываем функцию
+// obj.sing(); // "I can sing!"
+// Создание объекта с методом:
+// // создаем объект сразу с методом 
+// const obj = {
+//   name: 'Alice',
+//   sing: function() {
+//     console.log('I can sing!');
+//   },
+// };
+// // вызываем функцию 
+// obj.sing(); // "I can sing!"
+// Создание объекта с методом (сокращенная запись без слова 'function'):
+// // создаем объект сразу с методом 
+// const obj = {
+//   name: 'Alice',
+//   sing() {
+//     console.log('I can sing!');
+//   },
+// };
+// // вызываем функцию 
+// obj.sing(); // "I can sing!"
+// Чаще всего метод не используется изолированно от других свойств объекта: ему нужен доступ к этим свойствам, чтобы выполнять какие-либо действия с ними.
+
+// Для этого метод может использовать ключевое слово this.
+
+// const obj = {
+//   name: 'Alice',
+//   sing() {
+//     console.log(this.name + ' can sing!');
+//   },
+// };
+
+// obj.sing(); // "Alice can sing!"
+// Значение this - это объект, имя которого указано до точки, и именно он был использован для вызова метода.
+
+// Конечно, мы могли бы и не использовать слово this в примере выше, а просто указать для вывода в консоль конкретное свойство объекта и получить абсолютно такой же результат:
+
+// const obj = {
+//   name: 'Alice',
+//   sing() {
+//     console.log(obj.name + ' can sing!');
+//   },
+// };
+
+// obj.sing(); // "Alice can sing!"
+// К сожалению, такой код ненадежен. В случае копирования ссылки на объект в другую переменную, и перезаписи первоначальной переменной другим значением, вызов метода от имени новой переменной вернет ошибку.
+
+// let obj = {
+//   name: 'Alice',
+//   sing() {
+//     console.log(obj.name + ' can sing!');
+//   },
+// };
+// let obj2 = obj; // копируем ссылку в новую переменную
+// obj = null; // "обнуляем" нашу переменную: теперь в ней нет ссылки на объект
+// obj2.sing(); // "TypeError: Cannot read property 'name' of null"
+// В случае использования this.name в примере выше, ошибка бы не возникла.
+
+// Более наглядным примером, почему нужно использовать this, может быть использование одного метода для разных объектов:
+
+// // создаем 2 объекта
+// const cat = {
+//   name: 'Tom',
+// };
+// const mouse = {
+//   name: 'Jerry',
+// };
+// // объявляем функцию
+// function action(){
+//   console.log(this.name + ' runs!!!')
+// }
+// // добавляем функцию в свойства обоих методов
+// cat.action = action;
+// mouse.action = action;
+// // вызываем метод на каждом объекте
+// cat.action(); // "Tom runs!!!"
+// mouse.action(); // "Jerry runs!!!"
+// Обратите внимание, что this для каждого объекта разный - он является ссылкой на объект, который указан перед точкой.
+
+// Важно! Синтаксис для вызова метода функции выглядит так: objectName.propertyName/['propertyName'](),
+
+// где objectName - имя объекта, на котором вызывается метод, propertyName - имя свойства, записанное через скобочную или точечную запись.
+
+// Если нам необходимо использование this в функции, то мы должны использовать обычную функцию, а не стрелочную, потому что последняя не имеет собственного this, а обращается за ним во внешнюю нормальную функцию (в примере ниже стрелочная функция обращается к this во внешний метод obj.sing ()):
+
+// const obj = {
+//   name: 'Alice',
+//   sing() {
+//     let moreActions = () => this.name + ' can sing and dance!';
+//     console.log(moreActions());
+//   },
+// };
+// obj.sing(); // "Alice can sing and dance!"
+
+//----------------------------------------------------------
